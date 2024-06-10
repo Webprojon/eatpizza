@@ -1,0 +1,16 @@
+/////////////////////////////
+if (window.innerWidth > 640) {
+	const handleScroll = () => {
+		const scrollTop = window.scrollY || document.documentElement.scrollTop;
+	};
+	window.addEventListener("scroll", handleScroll);
+
+	return () => {
+		window.removeEventListener("scroll", handleScroll);
+	};
+}
+
+///////////////////////////
+if (isClient && window.innerWidth <= 640) {
+	setToggle(!toggle);
+}
