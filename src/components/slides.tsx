@@ -21,14 +21,14 @@ const homeinfos = [
 	{
 		heading: "Two large pizzas",
 		discount: 50,
-		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate beatae perferendis cupiditate in quibusdam magni at recusandae libero delectus asperiores aperiam obcaecati porro, sit quo vel cumque dicta distinctio, placeat aspernatur nobis rem perspiciatis.",
+		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate beatae perferendis cupiditate in quibusdam magni at recusandae libero delectus asperiores.",
 		img: thridpizza,
 		btn: "Add to Basket",
 	},
 	{
 		heading: "Three medium pizzas",
 		discount: 50,
-		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate beatae perferendis cupiditate in quibusdam magni at recusandae libero delectus asperiores aperiam obcaecati porro, sit quo vel cumque dicta distinctio, placeat aspernatur nobis rem perspiciatis.",
+		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate beatae perferendis cupiditate in quibusdam magni at recusandae libero delectus asperiores.",
 		img: sixthpizza,
 		btn: "Add to Basket",
 	},
@@ -58,10 +58,9 @@ export default function Slides() {
 								initial="initial"
 								animate="animate"
 								variants={animFromBottomToTop}
-								className="h-[75vh] flex items-center justify-around max-sm:px-3 max-sm:flex-col-reverse max-sm:h-screen max-sm:mt-[10rem]
-								max-sm:justify-between"
+								className="h-[75vh] flex items-center justify-around max-sm:px-3 max-sm:flex-col-reverse max-sm:justify-around max-sm:mt-[1rem]"
 							>
-								<div className="flex flex-col gap-y-10 w-[60%] max-sm:w-full max-sm:gap-y-4">
+								<div className="flex flex-col gap-y-10 w-[60%] max-sm:w-full max-sm:gap-y-4 max-sm:text-center">
 									<h1 className="tracking-wider text-3xl font-semibold max-sm:text-2xl">
 										{info.heading}
 										<span className="bg-green-500 px-2 ml-3 rounded-sm">

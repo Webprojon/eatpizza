@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { ImBin } from "react-icons/im";
@@ -67,10 +66,10 @@ export default function MobileBasket() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="w-[100%] max-w-[78rem] mx-auto mt-[6.5rem]"
+			className="w-[100%] max-w-[78rem] mx-auto mt-[6rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm py-10 px-16 max-sm:w-[96%]">
+				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm p-10 max-sm:w-[96%]">
 					<h1 className="font-semibold tracking-wider text-xl">
 						You have no item selected yet 😏
 					</h1>
@@ -153,13 +152,10 @@ export default function MobileBasket() {
 							))}
 
 						<div className="flex items-end justify-between">
-							<div className="flex">
+							<div className="max-sm:hidden flex">
 								<Input type="text" text="Enter promocode" size="md" />
 
-								<button
-									className="flex justify-center items-center w-[3.3rem] max-sm:w-[2.2rem] h-[2.7rem] bg-gradient-green rounded-tr-sm
-						 rounded-br-sm cursor-pointer"
-								>
+								<button className="flex justify-center items-center w-[3.3rem] h-[2.7rem] bg-gradient-green rounded-tr-sm rounded-br-sm cursor-pointer">
 									<FaChevronRight className="text-white size-6" />
 								</button>
 							</div>
@@ -194,7 +190,7 @@ export default function MobileBasket() {
 									<Input type="number" text="Floor" size="sm" />
 								</div>
 							</div>
-							<button className="absolute -right-4 -bottom-[5.5rem] w-[13rem] bg-gradient-green font-bold tracking-wider text-white px-3 py-2 rounded-sm transition-all">
+							<button className="self-end w-[13rem] bg-gradient-green font-bold tracking-wider text-white px-3 py-3 rounded-sm transition-all">
 								Submit the order
 							</button>
 						</form>

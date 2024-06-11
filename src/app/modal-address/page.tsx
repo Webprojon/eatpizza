@@ -53,15 +53,10 @@ export default function MapModalDesktop() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="mt-[8rem] mx-auto max-sm:w-full max-sm:mt-[5rem]"
+			className="mt-[8rem] mx-auto max-sm:w-full max-sm:mt-[6rem]"
 		>
 			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto max-sm:w-[96%]">
-				<CgClose
-					onClick={closeMap}
-					className="absolute right-5 top-4 size-7 cursor-pointer hover:scale-110 transition max-sm:size-8"
-				/>
-
-				<div className="flex justify-between gap-x-6 mt-10 max-sm:flex-col max-sm:mt-[4rem]">
+				<div className="flex justify-between gap-x-6 mt-3 max-sm:flex-col">
 					<div className="w-[60%] max-sm:w-full">
 						<Map />
 					</div>

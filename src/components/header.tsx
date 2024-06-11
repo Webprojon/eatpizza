@@ -123,7 +123,7 @@ export default function Header() {
 						</motion.ul>
 					)}
 
-					<div className="flex justify-center items-center gap-8 max-sm:gap-4">
+					<div className="flex justify-center items-center gap-8 max-sm:gap-x-6">
 						<button
 							onClick={() => router.push("/modal-address")}
 							className="flex items-center bg-gradient-green bg-gradient-green-hover font-semibold text-white transition-all
