@@ -18,7 +18,7 @@ import { animFromTopToBottom } from "@/lib/motion-anim";
 
 export default function Header() {
 	const pathname = usePathname();
-	const [scroll, setScroll] = useState<boolean>(false);
+	const [scroll, setScroll] = useState<boolean>();
 	const [toggle, setToggle] = useState<boolean>(true);
 	const [isClient, setIsClient] = useState(false);
 	const { userAddress } = useGlobalContext();
@@ -40,10 +40,10 @@ export default function Header() {
 		if (window.innerWidth > 640) {
 			const handleScroll = () => {
 				const scrollTop = window.scrollY || document.documentElement.scrollTop;
-				if (scrollTop >= 100) {
-					setScroll(!scroll);
+				if (scrollTop) {
+					setScroll(true);
 				} else {
-					setScroll(!scroll);
+					setScroll(false);
 				}
 			};
 			window.addEventListener("scroll", handleScroll);

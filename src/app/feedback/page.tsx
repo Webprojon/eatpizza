@@ -18,7 +18,7 @@ export default function Contact() {
 			<form action="#" className="flex flex-col gap-y-4 w-[40rem]">
 				<input
 					type="text"
-					placeholder="Your name"
+					placeholder="Enter your name"
 					autoComplete="off"
 					className="border py-3 px-4 tracking-wider rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500
 							dark:outline-none dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300"
@@ -27,7 +27,7 @@ export default function Contact() {
 					rows={7}
 					id="message"
 					name="message"
-					placeholder="Your message"
+					placeholder="Type your feedback here..."
 					className="border p-4 rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500 dark:outline-none 
 							dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300"
 				></textarea>

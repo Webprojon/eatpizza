@@ -251,7 +251,7 @@ export default function DesktopBasket() {
 												)}
 											</div>
 											<button
-												onClick={() => router.push("/order")}
+												onClick={() => router.push("/delivery")}
 												className="w-full bg-gradient-green bg-gradient-green-hover tracking-widest rounded-sm mt-1 py-2 
 											text-sm font-semibold text-white cursor-pointer"
 											>

@@ -48,7 +48,7 @@ export default function Slides() {
 
 	return (
 		<div>
-			<Swiper modules={[Autoplay]} loop={true} autoplay={{ delay: 4000 }}>
+			<Swiper modules={[Autoplay]} loop={true} autoplay={{ delay: 6000 }}>
 				{homeinfos.map((info, index) => (
 					<SwiperSlide key={index}>
 						{loading ? (
@@ -71,7 +71,7 @@ export default function Slides() {
 										{info.text}
 									</p>
 									<button
-										onClick={() => router.push("/modal-address")}
+										onClick={() => router.push("/menu")}
 										className="animate-bounce w-[11rem] bg-gradient-green font-semibold text-white transition-all rounded-sm py-2 px-4 mt-3 tracking-wider"
 									>
 										{info.btn}

@@ -55,7 +55,7 @@ export default function MapModalDesktop() {
 			variants={animFromBottomToTop}
 			className="max-sm:hidden mt-[8rem] mx-auto"
 		>
-			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 py-4 rounded-sm">
+			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm">
 				<CgClose
 					onClick={closeMap}
 					className="absolute right-5 top-4 size-7 cursor-pointer hover:scale-110 transition"

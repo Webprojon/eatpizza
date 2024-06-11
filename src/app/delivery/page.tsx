@@ -67,10 +67,10 @@ export default function MobileBasket() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="max-w-[78rem] mx-auto pt-[5.5rem] pb-4"
+			className="w-[100%] max-w-[78rem] mx-auto mt-[6.5rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="flex flex-col justify-center items-center mt-[10rem] bg-slate-800 rounded-sm py-10 px-16">
+				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm py-10">
 					<h1 className="font-semibold tracking-wider text-xl">
 						You have no item selected yet 😏
 					</h1>
@@ -87,7 +87,7 @@ export default function MobileBasket() {
 					{/* Header */}
 					<div className="flex justify-between items-center w-full h-10 py-8 px-4 bg-gray-50 dark:bg-slate-800">
 						<div
-							onClick={() => router.push("/")}
+							onClick={() => router.push("/menu")}
 							className="flex items-center cursor-pointer"
 						>
 							<FaChevronLeft className="size-6" />
@@ -95,7 +95,7 @@ export default function MobileBasket() {
 						</div>
 
 						<span className="font-bold tracking-wide">
-							Checkout ({numberOfItems})
+							Your Cart ({numberOfItems})
 						</span>
 						<ImBin onClick={() => clearAllItems()} className="size-6" />
 					</div>
@@ -164,56 +164,38 @@ export default function MobileBasket() {
 								</button>
 							</div>
 							<div>
-								<span className="pr-2 font-bold text-gray-700 dark:text-gray-300">
+								<span className="text-2xl pr-2 font-bold text-gray-700 dark:text-gray-300">
 									Total:
 								</span>
-								<span className="text-lg font-bold text-gray-700 dark:text-gray-300">
+								<span className="text-2xl font-bold text-gray-700 dark:text-gray-300">
 									{totalPrice} zł
 								</span>
 							</div>
 						</div>
 					</div>
 					{/* Contact information */}
-					<div className="bg-gray-50 dark:bg-slate-800 py-2 px-4">
+					<div className="bg-gray-50 dark:bg-slate-800 px-4 py-7">
 						<h2 className="mb-2 font-bold text-gray-600 dark:text-gray-300 tracking-wider text-lg max-sm:text-md">
 							Contact information
 						</h2>
 
-						<div className="flex items-center gap-x-8 max-sm:flex-col max-sm:items-start">
-							<div className="flex flex-col mb-5 max-sm:w-full">
+						<form action="#" className="relative flex flex-col gap-y-4">
+							<div className="flex gap-x-4">
 								<Input type="text" text="Enter your name" />
-							</div>
-
-							<div className="relative flex flex-col mb-5 max-sm:mb-0 max-sm:w-full">
-								<Input type="number" direction="pl" />
-								<span className="absolute left-2 top-[50%] translate-y-[-50%] text-gray-500 dark:text-gray-300">
-									+48
-								</span>
-							</div>
-
-							<div className="flex items-center gap-x-8 mb-5 max-sm:flex-col max-sm:items-start">
+								<div className="relative">
+									<Input type="number" direction="pl" />
+									<span className="absolute left-2 top-[50%] translate-y-[-50%] text-gray-500 dark:text-gray-300">
+										+48
+									</span>
+								</div>
 								<Input type="text" text="Street" />
 								<Input type="number" text="Flat" size="sm" />
 								<Input type="number" text="Floor" size="sm" />
 							</div>
-						</div>
-					</div>
-					{/* Checkout Button */}
-					<div className="mt-5 max-sm:mb-3 flex max-sm:px-4 justify-between items-end">
-						<div className="text-lg">
-							<span className="pr-2 font-bold text-gray-700 dark:text-gray-300">
-								Total:
-							</span>
-							<span className="font-bold text-gray-700 dark:text-gray-300">
-								{totalPrice} zł
-							</span>
-						</div>
-						<button
-							className="bg-gradient-green font-bold tracking-wider text-white px-3 py-2 rounded-sm 
-					transition-all text-md"
-						>
-							Checkout
-						</button>
+							<button className="absolute -right-4 -bottom-[5.5rem] w-[13rem] bg-gradient-green font-bold tracking-wider text-white px-3 py-2 rounded-sm transition-all">
+								Submit the order
+							</button>
+						</form>
 					</div>
 				</div>
 			)}
