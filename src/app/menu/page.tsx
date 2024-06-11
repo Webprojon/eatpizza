@@ -195,7 +195,7 @@ export default function Products() {
 						{Object.entries(items).map((categories, id) => (
 							<div key={id}>
 								<HeadingSection>{categories[0]}</HeadingSection>
-								<div className="flex flex-wrap gap-6 max-sm:gap-6">
+								<div className="flex flex-wrap gap-6 max-sm:gap-y-4">
 									{categories[1].map((category, index) => {
 										const {
 											id,
@@ -217,11 +217,11 @@ export default function Products() {
 												custom={index}
 												key={index}
 												className="w-[30%] rounded-sm overflow-hidden shadow-md max-sm:shadow-sm max-sm:flex max-sm:flex-row
-					       	max-sm:justify-between max-sm:w-full max-sm:rounded-none max-sm:pl-2 dark:bg-slate-800"
+					           	max-sm:justify-between max-sm:w-full max-sm:rounded-none max-sm:pl-2 dark:bg-slate-800 max-sm:py-4"
 											>
 												<div
 													className="p-4 cursor-zoom-in bg-gray-50 dark:bg-slate-700 rounded-sm
-						     transition-all max-sm:from-gray-300 max-sm:px-2 max-sm:w-[10rem] max-sm:flex max-sm:my-2"
+						           transition-all max-sm:from-gray-300 max-sm:px-2 max-sm:w-[10rem] max-sm:flex max-sm:my-2"
 												>
 													<Image
 														className={`mx-auto max-sm:h-[7rem] max-sm:w-[9rem]

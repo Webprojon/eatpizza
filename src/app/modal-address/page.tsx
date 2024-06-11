@@ -55,10 +55,10 @@ export default function MapModalDesktop() {
 			variants={animFromBottomToTop}
 			className="mt-[8rem] mx-auto max-sm:w-full max-sm:mt-[5rem]"
 		>
-			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto max-sm:w-[95%]">
+			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto max-sm:w-[96%]">
 				<CgClose
 					onClick={closeMap}
-					className="absolute right-5 top-4 size-7 cursor-pointer hover:scale-110 transition max-sm:size-10"
+					className="absolute right-5 top-4 size-7 cursor-pointer hover:scale-110 transition max-sm:size-8"
 				/>
 
 				<div className="flex justify-between gap-x-6 mt-10 max-sm:flex-col max-sm:mt-[4rem]">
@@ -80,7 +80,7 @@ export default function MapModalDesktop() {
 									onChange={handleChange}
 									value={addressInfo.address}
 									className={handleInputClasses(
-										"w-full max-sm:py-4 max-sm:text-lg",
+										"w-full max-sm:py-3 max-sm:text-lg",
 									)}
 								/>
 								<div className="flex gap-x-6">
@@ -92,7 +92,7 @@ export default function MapModalDesktop() {
 										onChange={handleChange}
 										value={addressInfo.flat}
 										className={handleInputClasses(
-											"w-[50%] max-sm:py-4 max-sm:text-lg",
+											"w-[50%] max-sm:py-3 max-sm:text-lg",
 										)}
 									/>
 									<input
@@ -103,14 +103,14 @@ export default function MapModalDesktop() {
 										onChange={handleChange}
 										value={addressInfo.floor}
 										className={handleInputClasses(
-											"w-[50%] max-sm:py-4 max-sm:text-lg",
+											"w-[50%] max-sm:py-3 max-sm:text-lg",
 										)}
 									/>
 								</div>
 								<button
 									onClick={handleSubmit}
 									className="w-[9rem] rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider
-									max-sm:py-4"
+									max-sm:py-3"
 								>
 									Submit
 								</button>

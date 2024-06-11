@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Footer from "../components/footer";
 import GlobalContextProvider from "@/context/global-context";
 import ThemeContextProvider from "@/context/theme-context";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 

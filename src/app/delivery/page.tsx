@@ -70,7 +70,7 @@ export default function MobileBasket() {
 			className="w-[100%] max-w-[78rem] mx-auto mt-[6.5rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm py-10 max-sm:w-[90%]">
+				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm py-10 px-16 max-sm:w-[96%]">
 					<h1 className="font-semibold tracking-wider text-xl">
 						You have no item selected yet 😏
 					</h1>

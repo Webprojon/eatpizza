@@ -58,7 +58,10 @@ export default function Header() {
 		};
 	}, []);
 
-	console.log(checkWidth);
+	const selectAddressBtn = () => {
+		router.push("/modal-address");
+		setToggle(false);
+	};
 
 	const displayAddress =
 		userAddress || storedUserAddress || "Select your address";
@@ -85,7 +88,7 @@ export default function Header() {
 				<div className="flex flex-row items-center">
 					{toggle && (
 						<motion.ul
-							className={`flex items-center justify-center gap-8 mr-8 max-lg:gap-6 max-md:gap-6 max-sm:gap-7 max-sm:border-t max-sm:border-gray-300
+							className={`flex items-center justify-center gap-8 mr-8 max-lg:gap-6 max-md:gap-6 max-sm:gap-7
 					 max-sm:absolute max-sm:top-[100%] max-sm:right-0 max-sm:left-0 max-sm:h-[100vh] max-sm:w-[100%] max-sm:flex-col max-sm:items-start 
 					 max-sm:justify-start max-sm:bg-gray-50 max-sm:dark:bg-slate-800 dark:bg-transparent  max-sm:py-5`}
 						>
@@ -104,11 +107,19 @@ export default function Header() {
 									</Link>
 								</li>
 							))}
-							<div className="hidden max-sm:flex w-full border-b border-gray-300"></div>
+							<div className="hidden max-sm:flex w-full border-b"></div>
 							<div className="hidden max-sm:flex justify-between items-center w-full px-6 py-1">
 								<span className="font-semibold">+48 22 575 71 71</span>
 								<FaPhoneFlip className="rounded-full border border-gray-300 p-2 w-[2.3rem] h-[2.3rem]" />
 							</div>
+							<button
+								onClick={selectAddressBtn}
+								className="bg-gradient-green hidden place-items-center font-semibold text-white transition-all rounded-sm py-3 px-2 mt-6 w-[95%]
+				         m-auto justify-center max-sm:flex tracking-wide"
+							>
+								<FaLocationDot className="mr-2 animate-bounce" />
+								Select your address
+							</button>
 						</motion.ul>
 					)}
 
