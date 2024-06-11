@@ -70,7 +70,7 @@ export default function MobileBasket() {
 			className="w-[100%] max-w-[78rem] mx-auto mt-[6.5rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm py-10">
+				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm py-10 max-sm:w-[90%]">
 					<h1 className="font-semibold tracking-wider text-xl">
 						You have no item selected yet 😏
 					</h1>
@@ -180,7 +180,7 @@ export default function MobileBasket() {
 						</h2>
 
 						<form action="#" className="relative flex flex-col gap-y-4">
-							<div className="flex gap-x-4">
+							<div className="flex gap-x-4 max-sm:flex-col max-sm:gap-y-6">
 								<Input type="text" text="Enter your name" />
 								<div className="relative">
 									<Input type="number" direction="pl" />
@@ -189,8 +189,10 @@ export default function MobileBasket() {
 									</span>
 								</div>
 								<Input type="text" text="Street" />
-								<Input type="number" text="Flat" size="sm" />
-								<Input type="number" text="Floor" size="sm" />
+								<div className="max-sm:flex max-sm:gap-x-5">
+									<Input type="number" text="Flat" size="sm" />
+									<Input type="number" text="Floor" size="sm" />
+								</div>
 							</div>
 							<button className="absolute -right-4 -bottom-[5.5rem] w-[13rem] bg-gradient-green font-bold tracking-wider text-white px-3 py-2 rounded-sm transition-all">
 								Submit the order

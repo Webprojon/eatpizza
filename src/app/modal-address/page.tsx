@@ -53,21 +53,21 @@ export default function MapModalDesktop() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="max-sm:hidden mt-[8rem] mx-auto"
+			className="mt-[8rem] mx-auto max-sm:w-full max-sm:mt-[5rem]"
 		>
-			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm">
+			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto max-sm:w-[95%]">
 				<CgClose
 					onClick={closeMap}
-					className="absolute right-5 top-4 size-7 cursor-pointer hover:scale-110 transition"
+					className="absolute right-5 top-4 size-7 cursor-pointer hover:scale-110 transition max-sm:size-10"
 				/>
 
-				<div className="flex justify-between gap-x-6 mt-10">
-					<div className="w-[60%]">
+				<div className="flex justify-between gap-x-6 mt-10 max-sm:flex-col max-sm:mt-[4rem]">
+					<div className="w-[60%] max-sm:w-full">
 						<Map />
 					</div>
 
-					<div className="w-[40%]">
-						<h2 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">
+					<div className="w-[40%] max-sm:w-full">
+						<h2 className="font-semibold text-gray-700 dark:text-gray-300 my-5 max-sm:text-xl">
 							Enter your address
 						</h2>
 						<div>
@@ -79,7 +79,9 @@ export default function MapModalDesktop() {
 									placeholder="Address"
 									onChange={handleChange}
 									value={addressInfo.address}
-									className={handleInputClasses("w-full")}
+									className={handleInputClasses(
+										"w-full max-sm:py-4 max-sm:text-lg",
+									)}
 								/>
 								<div className="flex gap-x-6">
 									<input
@@ -89,7 +91,9 @@ export default function MapModalDesktop() {
 										autoComplete="off"
 										onChange={handleChange}
 										value={addressInfo.flat}
-										className={handleInputClasses("w-[50%]")}
+										className={handleInputClasses(
+											"w-[50%] max-sm:py-4 max-sm:text-lg",
+										)}
 									/>
 									<input
 										type="number"
@@ -98,12 +102,15 @@ export default function MapModalDesktop() {
 										placeholder="Floor"
 										onChange={handleChange}
 										value={addressInfo.floor}
-										className={handleInputClasses("w-[50%]")}
+										className={handleInputClasses(
+											"w-[50%] max-sm:py-4 max-sm:text-lg",
+										)}
 									/>
 								</div>
 								<button
 									onClick={handleSubmit}
-									className="w-[9rem] rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider"
+									className="w-[9rem] rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider
+									max-sm:py-4"
 								>
 									Submit
 								</button>

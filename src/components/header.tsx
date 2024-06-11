@@ -20,6 +20,7 @@ export default function Header() {
 	const pathname = usePathname();
 	const [scroll, setScroll] = useState<boolean>();
 	const [toggle, setToggle] = useState<boolean>(true);
+	const [checkWidth, setCheckWidth] = useState<boolean>(false);
 	const [isClient, setIsClient] = useState(false);
 	const { userAddress } = useGlobalContext();
 	const router = useRouter();
@@ -37,22 +38,27 @@ export default function Header() {
 			}
 		}
 
-		if (window.innerWidth > 640) {
-			const handleScroll = () => {
-				const scrollTop = window.scrollY || document.documentElement.scrollTop;
-				if (scrollTop) {
-					setScroll(true);
-				} else {
-					setScroll(false);
-				}
-			};
-			window.addEventListener("scroll", handleScroll);
-
-			return () => {
-				window.removeEventListener("scroll", handleScroll);
-			};
+		if (window.innerWidth < 640) {
+			setToggle(false);
+			setCheckWidth(true);
 		}
+
+		const handleScroll = () => {
+			const scrollTop = window.scrollY || document.documentElement.scrollTop;
+			if (scrollTop) {
+				setScroll(true);
+			} else {
+				setScroll(false);
+			}
+		};
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
 	}, []);
+
+	console.log(checkWidth);
 
 	const displayAddress =
 		userAddress || storedUserAddress || "Select your address";
@@ -81,11 +87,14 @@ export default function Header() {
 						<motion.ul
 							className={`flex items-center justify-center gap-8 mr-8 max-lg:gap-6 max-md:gap-6 max-sm:gap-7 max-sm:border-t max-sm:border-gray-300
 					 max-sm:absolute max-sm:top-[100%] max-sm:right-0 max-sm:left-0 max-sm:h-[100vh] max-sm:w-[100%] max-sm:flex-col max-sm:items-start 
-					 max-sm:justify-start max-sm:bg-gray-50 dark:bg-transparent  max-sm:py-5`}
+					 max-sm:justify-start max-sm:bg-gray-50 max-sm:dark:bg-slate-800 dark:bg-transparent  max-sm:py-5`}
 						>
 							{links.map((link) => (
 								<li key={link.hash} className="max-sm:px-6">
 									<Link
+										onClick={() =>
+											checkWidth ? setToggle(false) : setToggle(true)
+										}
 										href={link.hash}
 										className={`${pathname === link.hash ? "after:bg-green-400 opacity-[0.70]" : ""} font-semibold hover:text-green-950
 										 dark:text-gray-300 hover:opacity-[0.85] tracking-wider transition-all relative block after:block after:content-['']

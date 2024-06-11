@@ -181,7 +181,7 @@ export default function Products() {
 							""
 						) : (
 							<div
-								onClick={() => router.push("/order")}
+								onClick={() => router.push("/delivery")}
 								className="fixed bottom-9 right-2 z-10 hidden max-sm:flex bg-red-600 dark:bg-red-900 py-[.9rem] px-4 rounded-full"
 							>
 								<span className="flex items-center justify-center font-semibold tracking-wider text-white text-md">

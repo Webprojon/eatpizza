@@ -58,21 +58,22 @@ export default function Slides() {
 								initial="initial"
 								animate="animate"
 								variants={animFromBottomToTop}
-								className="h-[75vh] flex items-center justify-around"
+								className="h-[75vh] flex items-center justify-around max-sm:px-3 max-sm:flex-col"
 							>
-								<div className="flex flex-col gap-y-10 w-[60%]">
-									<h1 className="tracking-wider text-3xl font-semibold">
+								<div className="flex flex-col gap-y-10 w-[60%] max-sm:w-full max-sm:gap-y-4">
+									<h1 className="tracking-wider text-3xl font-semibold max-sm:text-2xl">
 										{info.heading}
 										<span className="bg-green-500 px-2 ml-3 rounded-sm">
 											{info.discount} % discount
 										</span>
 									</h1>
-									<p className="tracking-wider leading-10 text-lg">
+									<p className="tracking-wider leading-10 text-lg max-sm:leading-8">
 										{info.text}
 									</p>
 									<button
 										onClick={() => router.push("/menu")}
-										className="animate-bounce w-[11rem] bg-gradient-green font-semibold text-white transition-all rounded-sm py-2 px-4 mt-3 tracking-wider"
+										className="animate-bounce w-[11rem] bg-gradient-green font-semibold text-white transition-all rounded-sm py-2 px-4 mt-3
+										 tracking-wider max-sm:w-full max-sm:animate-none max-sm:py-3"
 									>
 										{info.btn}
 									</button>
