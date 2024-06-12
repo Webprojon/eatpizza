@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { links } from "@/lib/data";
@@ -9,7 +8,6 @@ import { FaLocationDot, FaMoon, FaPhoneFlip } from "react-icons/fa6";
 import logo from "@images/general-imgs/logo.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useGlobalContext } from "@/context/global-context";
 import { usePathname, useRouter } from "next/navigation";
 import { HiOutlineSun } from "react-icons/hi";
 import { useTheme } from "@/context/theme-context";
@@ -21,23 +19,10 @@ export default function Header() {
 	const [scroll, setScroll] = useState<boolean>();
 	const [toggle, setToggle] = useState<boolean>(true);
 	const [checkWidth, setCheckWidth] = useState<boolean>(false);
-	const [isClient, setIsClient] = useState(false);
-	const { userAddress } = useGlobalContext();
-	const router = useRouter();
 	const { theme, toggleTheme } = useTheme();
-	const [storedUserAddress, setStoredUserAddress] = useState<string | null>(
-		null,
-	);
+	const router = useRouter();
 
 	useEffect(() => {
-		setIsClient(true);
-		if (typeof window !== "undefined") {
-			const address = localStorage.getItem("storeUserStreet");
-			if (address) {
-				setStoredUserAddress(JSON.parse(address));
-			}
-		}
-
 		if (window.innerWidth < 640) {
 			setToggle(false);
 			setCheckWidth(true);
@@ -62,9 +47,6 @@ export default function Header() {
 		router.push("/modal-address");
 		setToggle(false);
 	};
-
-	const displayAddress =
-		userAddress || storedUserAddress || "Select your address";
 
 	return (
 		<motion.header
@@ -132,7 +114,7 @@ export default function Header() {
 							<span className="pr-2 max-sm:px-1">
 								<FaLocationDot className="animate-bounce" />
 							</span>
-							{displayAddress}
+							Select your address
 						</button>
 						<div
 							onClick={toggleTheme}

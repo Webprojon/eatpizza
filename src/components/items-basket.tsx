@@ -1,24 +1,22 @@
 "use client";
-import React, { useEffect, useState, ChangeEvent } from "react";
+import React, { useEffect, useState } from "react";
 import basket from "@images/general-imgs/basket.png";
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa6";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
 import animpizza from "@images/general-imgs/animpizza.png";
-import Loader from "./loader";
 import { CgClose } from "react-icons/cg";
 import Counter from "./counter";
 import toast from "react-hot-toast";
 import { useGlobalContext } from "@/context/global-context";
 import { useRouter } from "next/navigation";
+import { SubmitFormBasket } from "@/actions/action";
 
 export default function DesktopBasket() {
 	const { choosenPizza, setChoosenPizza } = useGlobalContext();
 	const [open, setOpen] = useState<boolean>(false);
-	const [loading, setLoading] = useState(true);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [numberOfItems, setNumberOfItems] = useState(1);
-	const [readonly, setReadonly] = useState(false);
 	const [promoCode, setPromoCode] = useState<string>("");
 	const [bonus, setBonus] = useState(0);
 	const router = useRouter();
@@ -30,30 +28,8 @@ export default function DesktopBasket() {
 		setChoosenPizza(storedChoosenItem);
 	}, []);
 
-	setTimeout(() => {
-		setLoading(false);
-	}, 100);
-
 	const isOpenCart = () => {
 		setOpen(!open);
-	};
-
-	const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-		setPromoCode(event.target.value);
-	};
-
-	const calculatePromoBonus = () => {
-		const promo = "MYPIZZA";
-		if (promoCode === promo) {
-			setTotalPrice((prevPrice) => {
-				const percentage = (bonus / 100) * prevPrice;
-				return prevPrice - percentage;
-			});
-			setPromoCode("");
-			setReadonly(true);
-			toast.success(`You got ${bonus} % bonus !`);
-		}
-		toast.error("Not available code 😉");
 	};
 
 	const getTotalPrice = (total: number) => {
@@ -82,7 +58,6 @@ export default function DesktopBasket() {
 	const clearAllItems = () => {
 		setChoosenPizza([]);
 		setTotalPrice(0);
-		setReadonly(false);
 		toast.success("Cart is empty ! Stay with us 😊");
 		localStorage.removeItem("choosenItem");
 	};
@@ -111,7 +86,7 @@ export default function DesktopBasket() {
 				<div className={`relative ${open ? "h-[9.2vh]" : "h-[48vh]"}`}>
 					<div
 						onClick={isOpenCart}
-						className="flex justify-between border-b border-gray-300 px-4 py-4 cursor-pointer"
+						className="flex justify-between border-b border-gray-300 dark:border-gray-500 px-4 py-4 cursor-pointer"
 					>
 						<span className="flex items-center font-bold text-lg">
 							Cart {open ? <GoTriangleDown /> : <GoTriangleUp />}
@@ -129,162 +104,139 @@ export default function DesktopBasket() {
 					<div
 						className={`${open ? " hidden" : "flex"} flex-col items-center relative mt-1 m-4`}
 					>
-						{loading ? (
-							<div className=" w-full h-[11.6rem]">
-								<Loader />
-							</div>
-						) : (
-							<div className="w-full">
-								{choosenPizza.length === 0 ? (
-									<div className="mt-4 flex flex-col items-center">
-										<Image
-											src={basket}
-											quality="95"
-											priority={true}
-											alt="basket"
-											className="mt-3 w-[10rem]"
-										/>
-										<p className="animate-pulse text-sm text-center px-1 pt-4 text-gray-600 dark:text-gray-300 font-medium">
-											Your cart is empty. Add items from the menu or repeat your
-											previous order.
-										</p>
-									</div>
-								) : (
-									<div>
-										<div className="border-b h-[22vh] overflow-y-scroll no-scrollbar">
-											<div className="mb-2 flex justify-between w-full tracking-wider">
-												<span>({numberOfItems})</span>
-												<span
-													onClick={clearAllItems}
-													className="cursor-pointer"
-												>
-													clear
-												</span>
-											</div>
-											{choosenPizza &&
-												choosenPizza.map((item, index: number) => {
-													const { itemImg, itemName, itemCategory, itemPrice } =
-														item;
-													return (
-														<div
-															onLoad={() => {
-																setOpen(false);
-																getTotalPrice(itemPrice);
-																setNumberOfItems(choosenPizza.length);
-															}}
-															key={index}
-															className="mb-3 pb-2"
-														>
-															<div className="mb-3 last:mb-1 relative flex items-center">
-																<div>
-																	<Image
-																		className="w-[3.8rem]"
-																		quality="95"
-																		priority={true}
-																		src={itemImg}
-																		alt={itemName}
-																	/>
-																</div>
-																<div className="ml-3">
-																	<h2 className="text-gray-800 text-sm font-bold tracking-wider dark:text-gray-300">
-																		{itemName}
-																	</h2>
-																	<div className="flex pt-[.3rem] text-gray-700 dark:text-gray-300 text-xs font-semibold tracking-wide">
-																		<span
-																			className={
-																				itemCategory === "pizza"
-																					? `block pr-4`
-																					: "hidden"
-																			}
-																		>
-																			traditional
-																		</span>
-																		<span>
-																			{item.itemSize}{" "}
-																			{definedCategory(itemCategory)}
-																		</span>
-																	</div>
-																</div>
-																<CgClose
-																	onClick={() => {
-																		deleteOneItem(index, itemPrice);
-																	}}
-																	className="absolute top-0 right-0 cursor-pointer size-5"
-																/>
-															</div>
-															<div className="flex items-end justify-between w-full">
-																<Counter
-																	index={index}
-																	total={itemPrice}
-																	setTotalPrice={setTotalPrice}
-																	setNumberOfItems={setNumberOfItems}
-																/>
-																<span className="font-semibold text-xs tracking-wider text-gray-700 dark:text-gray-300">
-																	{itemPrice} zł
-																</span>
-															</div>
-														</div>
-													);
-												})}
+						<div className="w-full">
+							{choosenPizza.length === 0 ? (
+								<div className="mt-4 flex flex-col items-center">
+									<Image
+										src={basket}
+										quality="95"
+										priority={true}
+										alt="basket"
+										className="mt-3 w-[10rem]"
+									/>
+									<p className="animate-pulse text-sm text-center px-1 pt-4 text-gray-600 dark:text-gray-300 font-medium">
+										Your cart is empty. Add items from the menu or repeat your
+										previous order.
+									</p>
+								</div>
+							) : (
+								<div>
+									<div className="border-b h-[22vh] overflow-y-scroll no-scrollbar">
+										<div className="mb-2 flex justify-between w-full tracking-wider">
+											<span>({numberOfItems})</span>
+											<span onClick={clearAllItems} className="cursor-pointer">
+												clear
+											</span>
 										</div>
-										<div>
-											<div className="my-1 flex items-center justify-between w-full">
-												<h3 className="text-md tracking-wider font-bold">
-													Total:
-												</h3>
-												<span className="text-md tracking-wider font-bold">
-													{totalPrice.toFixed(2)} zł
-												</span>
-											</div>
-											<div className="h-4 text-center">
-												{readonly ? (
-													<p className="animate-pulse text-xs font-semibold text-gray-700 dark:text-gray-300 text-center">
-														You already got {bonus} % discount
-													</p>
-												) : (
-													<p
-														className={`${totalPrice > 120 ? "flex" : "hidden"} animate-pulse text-xs font-semibold text-gray-700 dark:text-gray-300`}
+										{choosenPizza &&
+											choosenPizza.map((item, index: number) => {
+												const { itemImg, itemName, itemCategory, itemPrice } =
+													item;
+												return (
+													<div
+														onLoad={() => {
+															setOpen(false);
+															getTotalPrice(itemPrice);
+															setNumberOfItems(choosenPizza.length);
+														}}
+														key={index}
+														className="mb-3 pb-2"
 													>
-														Promocode MYPIZZA to get
-														<span className="pl-1">{bonus}</span>% discount
-													</p>
-												)}
-											</div>
-											<button
-												onClick={() => router.push("/delivery")}
-												className="w-full bg-gradient-green bg-gradient-green-hover tracking-widest rounded-sm mt-1 py-2 
-											text-sm font-semibold text-white cursor-pointer"
-											>
-												Order Now
-											</button>
-										</div>
+														<div className="mb-3 last:mb-1 relative flex items-center">
+															<div>
+																<Image
+																	className="w-[3.8rem]"
+																	quality="95"
+																	priority={true}
+																	src={itemImg}
+																	alt={itemName}
+																/>
+															</div>
+															<div className="ml-3">
+																<h2 className="text-gray-800 text-sm font-bold tracking-wider dark:text-gray-300">
+																	{itemName}
+																</h2>
+																<div className="flex pt-[.3rem] text-gray-700 dark:text-gray-300 text-xs font-semibold tracking-wide">
+																	<span
+																		className={
+																			itemCategory === "pizza"
+																				? `block pr-4`
+																				: "hidden"
+																		}
+																	>
+																		traditional
+																	</span>
+																	<span>
+																		{item.itemSize}{" "}
+																		{definedCategory(itemCategory)}
+																	</span>
+																</div>
+															</div>
+															<CgClose
+																onClick={() => {
+																	deleteOneItem(index, itemPrice);
+																}}
+																className="absolute top-0 right-0 cursor-pointer size-5"
+															/>
+														</div>
+														<div className="flex items-end justify-between w-full">
+															<Counter
+																index={index}
+																total={itemPrice}
+																setTotalPrice={setTotalPrice}
+																setNumberOfItems={setNumberOfItems}
+															/>
+															<span className="font-semibold text-xs tracking-wider text-gray-700 dark:text-gray-300">
+																{itemPrice} zł
+															</span>
+														</div>
+													</div>
+												);
+											})}
 									</div>
-								)}
-							</div>
-						)}
+									<div>
+										<div className="my-1 flex items-center justify-between w-full">
+											<h3 className="text-md tracking-wider font-bold">
+												Total:
+											</h3>
+											<span className="text-md tracking-wider font-bold">
+												{totalPrice.toFixed(2)} zł
+											</span>
+										</div>
+										<button
+											onClick={() => router.push("/delivery")}
+											className="w-full bg-gradient-green bg-gradient-green-hover tracking-widest rounded-sm mt-1 py-2 
+											text-sm font-semibold text-white cursor-pointer"
+										>
+											Submit Now
+										</button>
+									</div>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className="relative shadow-md bg-white dark:bg-slate-800 rounded-sm py-[.7rem] px-4">
+			<form
+				action={SubmitFormBasket}
+				className="relative shadow-md bg-white dark:bg-slate-800 rounded-sm py-[.7rem] px-4"
+			>
 				<input
-					readOnly={readonly ? true : false}
-					value={promoCode}
-					onChange={handleChangeInput}
 					type="text"
+					name="promocode"
 					placeholder="Enter promocode"
 					autoComplete="off"
 					className="bg-gray-100 focus:bg-gray-50 font-medium outline-green-400 border px-4 py-2 rounded-sm
-					dark:outline-none dark:bg-slate-800 dark:text-gray-300 dark:placeholder:text-gray-300"
+					dark:outline-none dark:bg-slate-800 dark:border-gray-500 dark:text-gray-300 dark:placeholder:text-gray-300"
 				/>
 				<button
-					onClick={calculatePromoBonus}
 					className="bg-gradient-green bg-gradient-green-hover flex justify-center items-center rounded-sm absolute bottom-[.7rem] 
 					right-4 w-8 h-[2.6rem] cursor-pointer"
 				>
 					<FaChevronRight className="text-white" />
 				</button>
-			</div>
+			</form>
 		</div>
 	);
 }

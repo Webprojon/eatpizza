@@ -21,8 +21,6 @@ type GlobalDataType = {
 	setChoosenPizza: React.Dispatch<React.SetStateAction<SelectedItemsType[]>>;
 	isLoaded: boolean;
 	setIsLoaded: React.Dispatch<React.SetStateAction<boolean>>;
-	userAddress: string;
-	setUserAddress: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const defaultGlobalContextValue: GlobalDataType = {
@@ -30,8 +28,6 @@ const defaultGlobalContextValue: GlobalDataType = {
 	setChoosenPizza: () => {},
 	isLoaded: false,
 	setIsLoaded: () => {},
-	userAddress: "",
-	setUserAddress: () => {},
 };
 
 const GlobalContext = createContext<GlobalDataType>(defaultGlobalContextValue);
@@ -41,15 +37,12 @@ export default function GlobalContextProvider({
 }: GlobalContextProviderProps) {
 	const [choosenPizza, setChoosenPizza] = useState<SelectedItemsType[]>([]);
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
-	const [userAddress, setUserAddress] = useState("");
 
 	const contextValue: GlobalDataType = {
 		choosenPizza,
 		setChoosenPizza,
 		isLoaded,
 		setIsLoaded,
-		userAddress,
-		setUserAddress,
 	};
 	return (
 		<GlobalContext.Provider value={contextValue}>

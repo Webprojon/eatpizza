@@ -1,10 +1,17 @@
 import React from "react";
 
-export default function Input({ type, text = "", size = "", direction = "" }) {
+export default function Input({
+	type,
+	name = "",
+	text = "",
+	size = "",
+	direction = "",
+}) {
 	return (
 		<>
 			<input
 				type={type}
+				name={name}
 				placeholder={text}
 				autoComplete="off"
 				className={`border border-gray-300 outline-green-500 tracking-wider text-gray-500 placeholder:text-gray-500 px-3 py-2 rounded-sm

@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Input from "../../components/input";
 import { animFromBottomToTop } from "@/lib/motion-anim";
+import { SubmitFormBasket, SubmitFormDelivery } from "@/actions/action";
 
 export default function MobileBasket() {
 	const router = useRouter();
@@ -152,13 +153,17 @@ export default function MobileBasket() {
 							))}
 
 						<div className="flex items-end justify-between">
-							<div className="max-sm:hidden flex">
-								<Input type="text" text="Enter promocode" size="md" />
-
+							<form action={SubmitFormBasket} className="max-sm:hidden flex">
+								<Input
+									type="text"
+									name="promocode"
+									text="Enter promocode"
+									size="md"
+								/>
 								<button className="flex justify-center items-center w-[3.3rem] h-[2.7rem] bg-gradient-green rounded-tr-sm rounded-br-sm cursor-pointer">
 									<FaChevronRight className="text-white size-6" />
 								</button>
-							</div>
+							</form>
 							<div>
 								<span className="text-2xl pr-2 font-bold text-gray-700 dark:text-gray-300">
 									Total:
@@ -175,19 +180,32 @@ export default function MobileBasket() {
 							Contact information
 						</h2>
 
-						<form action="#" className="relative flex flex-col gap-y-4">
+						<form
+							action={SubmitFormDelivery}
+							className="relative flex flex-col gap-y-4"
+						>
 							<div className="flex gap-x-4 max-sm:flex-col max-sm:gap-y-6">
-								<Input type="text" text="Enter your name" />
+								<Input type="text" name="username" text="Enter your name" />
 								<div className="relative">
-									<Input type="number" direction="pl" />
+									<Input type="number" name="userphonenumber" direction="pl" />
 									<span className="absolute left-2 top-[50%] translate-y-[-50%] text-gray-500 dark:text-gray-300">
 										+48
 									</span>
 								</div>
-								<Input type="text" text="Street" />
+								<Input type="text" name="userstreet" text="Street" />
 								<div className="flex gap-x-4">
-									<Input type="number" text="Flat" size="sm" />
-									<Input type="number" text="Floor" size="sm" />
+									<Input
+										type="number"
+										name="userflatnumber"
+										text="Flat"
+										size="sm"
+									/>
+									<Input
+										type="number"
+										name="userfloornumber"
+										text="Floor"
+										size="sm"
+									/>
 								</div>
 							</div>
 							<button
