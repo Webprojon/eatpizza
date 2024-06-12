@@ -1,7 +1,5 @@
 "use client";
-
 import React, { ChangeEvent, useState } from "react";
-import { CgClose } from "react-icons/cg";
 import { useGlobalContext } from "@/context/global-context";
 import Map from "./map";
 import { motion } from "framer-motion";
@@ -43,9 +41,9 @@ export default function MapModalDesktop() {
 
 	const handleInputClasses = (width: string) => {
 		return `${width} border outline-green-500 py-2 px-3 rounded-sm tracking-wider text-gray-600
-								 placeholder:text-gray-600 dark:outline-none dark:bg-slate-800 dark:text-gray-300 dark:placeholder:text-gray-300
-								 ${validInput ? "border-red-500" : "border-gray-300"}
-								 `;
+		 placeholder:text-gray-600 dark:outline-none dark:bg-slate-800 dark:text-gray-300 dark:placeholder:text-gray-300
+		${validInput ? "border-red-500" : "border-gray-300"}
+		`;
 	};
 
 	return (
@@ -53,14 +51,13 @@ export default function MapModalDesktop() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="mt-[8rem] mx-auto max-sm:w-full max-sm:mt-[6rem]"
+			className="mt-[6rem] mx-auto max-sm:w-full border"
 		>
 			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto max-sm:w-[96%]">
 				<div className="flex justify-between gap-x-6 mt-3 max-sm:flex-col">
 					<div className="w-[60%] max-sm:w-full">
 						<Map />
 					</div>
-
 					<div className="w-[40%] max-sm:w-full">
 						<h2 className="font-semibold text-gray-700 dark:text-gray-300 my-5 max-sm:text-xl">
 							Enter your address
@@ -104,10 +101,10 @@ export default function MapModalDesktop() {
 								</div>
 								<button
 									onClick={handleSubmit}
-									className="w-[9rem] rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider
-									max-sm:py-3"
+									className="self-end rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider
+									max-sm:py-3 max-sm:w-full max-sm:mt-[1.5rem]"
 								>
-									Submit
+									Submit form
 								</button>
 							</form>
 						</div>

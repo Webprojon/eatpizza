@@ -31,10 +31,14 @@ import choco from "@images/icecreams/choco.webp";
 import lovefair from "@images/icecreams/love-a-fair.png";
 import { StaticImageData } from "next/image";
 
+//Home Img
+import pizzaspinner1 from "@images/pizzas/pngtree-pizza-red-food-png-image_12472941.png";
+import pizzaspinner2 from "@images/pizzas/02-Mini-Pizza-1.png";
+
 export const links = [
 	{
 		name: "Home",
-		hash: "/",
+		hash: "/home",
 	},
 	{
 		name: "Menu",
@@ -50,18 +54,22 @@ export const links = [
 	},
 ] as const;
 
-//export const homeinfos = [
-//	{
-//		heading: "Two large pizzas",
-//		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum adipisci suscipit ratione culpa quas possimus dignissimos ullam illo provident?",
-//		btn: "Add to Basket",
-//	},
-//	{
-//		heading: "Two large pizzas",
-//		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum adipisci suscipit ratione culpa quas possimus dignissimos ullam illo provident?",
-//		btn: "Add to Basket",
-//	},
-//] as const;
+export const homeinfos = [
+	{
+		heading: "Two large pizzas",
+		discount: 50,
+		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate beatae perferendis cupiditate in quibusdam magni at recusandae libero delectus asperiores.",
+		img: pizzaspinner1,
+		btn: "Add to Basket",
+	},
+	{
+		heading: "Three medium pizzas",
+		discount: 50,
+		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate beatae perferendis cupiditate in quibusdam magni at recusandae libero delectus asperiores.",
+		img: pizzaspinner2,
+		btn: "Add to Basket",
+	},
+] as const;
 
 interface ItemsDataType {
 	id: number;

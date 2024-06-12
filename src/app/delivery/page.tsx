@@ -70,8 +70,8 @@ export default function MobileBasket() {
 		>
 			{choosenPizza.length === 0 ? (
 				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm p-10 max-sm:w-[96%]">
-					<h1 className="font-semibold tracking-wider text-xl">
-						You have no item selected yet 😏
+					<h1 className="font-semibold tracking-wider text-lg text-center">
+						You have no item selected 😏
 					</h1>
 					<button
 						onClick={() => router.push("/menu")}
@@ -185,12 +185,15 @@ export default function MobileBasket() {
 									</span>
 								</div>
 								<Input type="text" text="Street" />
-								<div className="max-sm:flex max-sm:gap-x-5">
+								<div className="flex gap-x-4">
 									<Input type="number" text="Flat" size="sm" />
 									<Input type="number" text="Floor" size="sm" />
 								</div>
 							</div>
-							<button className="self-end w-[13rem] bg-gradient-green font-bold tracking-wider text-white px-3 py-3 rounded-sm transition-all">
+							<button
+								className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-sm transition-all
+							mt-[1.5rem] max-sm:w-full max-sm:py-3"
+							>
 								Submit the order
 							</button>
 						</form>

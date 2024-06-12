@@ -35,10 +35,10 @@ export default function Contact() {
 							dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 max-sm:text-lg"
 				></textarea>
 				<button
-					className="w-[9rem] bg-gradient-green bg-gradient-green-hover font-bold tracking-wider text-white py-2 rounded-sm 
+					className="self-end bg-gradient-green bg-gradient-green-hover font-semibold tracking-wider text-white px-4 py-2 rounded-sm 
 				     	transition-all text-md max-sm:text-lg max-sm:mt-2 max-sm:py-3 max-sm:w-full"
 				>
-					Submit
+					Submit form
 				</button>
 			</form>
 		</motion.section>
