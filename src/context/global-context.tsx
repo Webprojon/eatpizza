@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, createContext, useContext } from "react";
 
 type GlobalContextProviderProps = {
@@ -19,15 +18,11 @@ type SelectedItemsType = {
 type GlobalDataType = {
 	choosenPizza: SelectedItemsType[];
 	setChoosenPizza: React.Dispatch<React.SetStateAction<SelectedItemsType[]>>;
-	isLoaded: boolean;
-	setIsLoaded: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const defaultGlobalContextValue: GlobalDataType = {
 	choosenPizza: [],
 	setChoosenPizza: () => {},
-	isLoaded: false,
-	setIsLoaded: () => {},
 };
 
 const GlobalContext = createContext<GlobalDataType>(defaultGlobalContextValue);
@@ -36,13 +31,10 @@ export default function GlobalContextProvider({
 	children,
 }: GlobalContextProviderProps) {
 	const [choosenPizza, setChoosenPizza] = useState<SelectedItemsType[]>([]);
-	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
 	const contextValue: GlobalDataType = {
 		choosenPizza,
 		setChoosenPizza,
-		isLoaded,
-		setIsLoaded,
 	};
 	return (
 		<GlobalContext.Provider value={contextValue}>

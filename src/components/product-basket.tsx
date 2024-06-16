@@ -148,6 +148,8 @@ export default function DesktopBasket() {
 																	className="w-[3.8rem]"
 																	quality="95"
 																	priority={true}
+																	width={200}
+																	height={200}
 																	src={itemImg}
 																	alt={itemName}
 																/>

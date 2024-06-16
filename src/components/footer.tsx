@@ -7,7 +7,7 @@ export default function Footer() {
 
 	return (
 		<footer
-			className={`${pathname === "/" ? "hidden" : pathname === "/home" ? "hidden" : ""} w-full bg-gray-50 dark:bg-transparent py-5`}
+			className={`${pathname === "/" ? "hidden" : pathname === "/home" ? "hidden" : ""} mt-8 w-full bg-gray-50 dark:bg-transparent`}
 		>
 			<div className="flex justify-between max-w-[78rem] mx-auto py-[1rem] tracking-wider max-sm:flex-col max-sm:py-0 max-sm:p-3 max-sm:text-center">
 				<div>
@@ -15,7 +15,7 @@ export default function Footer() {
 						© All Rights Reserved. Tokhirjon Khasanov ❤️
 					</a>
 				</div>
-				<div className="pt-2 font-semibold">
+				<div className="max-sm:pt-2 font-semibold">
 					<LogoutLink>Log out</LogoutLink>
 				</div>
 			</div>

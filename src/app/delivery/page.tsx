@@ -116,6 +116,8 @@ export default function MobileBasket() {
 											className="max-sm:w-[7.4rem] w-[10rem]"
 											quality="95"
 											priority={true}
+											width={200}
+											height={200}
 											src={item.itemImg}
 											alt={item.itemName}
 										/>

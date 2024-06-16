@@ -1,4 +1,0 @@
-///////////////////////////
-if (isClient && window.innerWidth <= 640) {
-	setToggle(!toggle);
-}
