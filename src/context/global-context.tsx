@@ -18,11 +18,15 @@ type SelectedItemsType = {
 type GlobalDataType = {
 	choosenPizza: SelectedItemsType[];
 	setChoosenPizza: React.Dispatch<React.SetStateAction<SelectedItemsType[]>>;
+	selectValue: string;
+	setSelectValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const defaultGlobalContextValue: GlobalDataType = {
 	choosenPizza: [],
 	setChoosenPizza: () => {},
+	selectValue: "",
+	setSelectValue: () => {},
 };
 
 const GlobalContext = createContext<GlobalDataType>(defaultGlobalContextValue);
@@ -31,10 +35,13 @@ export default function GlobalContextProvider({
 	children,
 }: GlobalContextProviderProps) {
 	const [choosenPizza, setChoosenPizza] = useState<SelectedItemsType[]>([]);
+	const [selectValue, setSelectValue] = useState<string>("all");
 
 	const contextValue: GlobalDataType = {
 		choosenPizza,
 		setChoosenPizza,
+		selectValue,
+		setSelectValue,
 	};
 	return (
 		<GlobalContext.Provider value={contextValue}>
