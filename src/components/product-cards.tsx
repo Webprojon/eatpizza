@@ -88,7 +88,7 @@ export default function ProductCards({ products }: any) {
 						>
 							<Link href={`/menu/${id}`}>
 								<Image
-									className={`mx-auto max-sm:h-[7rem] max-sm:w-[9rem]
+									className={`mx-auto max-sm:h-[8rem] max-sm:w-[9rem]
 									${itemCategory == "pizza" ? "h-[11rem] w-[11rem] hover:animate-spin-17s" : "h-[8rem] w-[8rem]"}
 									`}
 									src={itemImg}

@@ -17,8 +17,6 @@ export default function DesktopBasket() {
 	const [open, setOpen] = useState<boolean>(false);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [numberOfItems, setNumberOfItems] = useState(1);
-	const [promoCode, setPromoCode] = useState<string>("");
-	const [bonus, setBonus] = useState(0);
 	const router = useRouter();
 
 	useEffect(() => {
@@ -35,10 +33,6 @@ export default function DesktopBasket() {
 	const getTotalPrice = (total: number) => {
 		setTotalPrice((prevPrice) => {
 			const expectedSum = prevPrice + total;
-			if (expectedSum > 120) {
-				setBonus(25);
-			}
-
 			return expectedSum;
 		});
 	};
