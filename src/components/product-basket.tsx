@@ -79,7 +79,7 @@ export default function DesktopBasket() {
 
 	return (
 		<div
-			className="sticky top-[5rem] transition-all w-[23rem] h-[23rem] mt-[6.5rem] flex flex-col gap-y-2
+			className="sticky top-[5rem] transition-all w-[18rem] h-[23rem] mt-[6.5rem] flex flex-col gap-y-2
 		max-sm:hidden"
 		>
 			<div className="bg-white dark:bg-slate-800 rounded-sm shadow-md">

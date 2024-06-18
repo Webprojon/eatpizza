@@ -2,8 +2,9 @@
 import { useGlobalContext } from "@/context/global-context";
 import { ItemsType, SelectedItemType } from "@/lib/types";
 import clsx from "clsx";
-import { useState } from "react";
-import { FaCartShopping } from "react-icons/fa6";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { FaCartShopping, FaChevronUp } from "react-icons/fa6";
 
 const pizzaVolumes = [24, 29, 34, 39];
 const sauceVolumes = [25, 50];
@@ -11,15 +12,15 @@ const drinkVolumes = [0.5, 0.85, 1.5];
 const creamVolumes = [100, 465];
 
 export default function AddToCartBtn({ product, index }: any) {
+	const [isClient, setIsClient] = useState(false);
 	const { itemCategory, itemPrice } = product;
-	const [selectedPizza, setSelectedPizza] = useState<any>(null);
 	const { setChoosenPizza } = useGlobalContext();
 	const [selectedVolume, setSelectedVolume] = useState<SelectedItemType>({});
 	const [productPrices, setProductPrices] = useState<SelectedItemType>({});
 
-	const handleSelect = (product: ItemsType) => {
-		setSelectedPizza(product);
-	};
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
 
 	const definedPrice = (itemCategory: string, index: number) => {
 		switch (itemCategory) {
@@ -216,15 +217,32 @@ export default function AddToCartBtn({ product, index }: any) {
 				<div className="text-md text-gray-700 dark:text-gray-400 font-bold max-sm:text-sm pr-2">
 					<span>{definedPrice(itemCategory, index)} zł</span>
 				</div>
+
 				<button
-					onClick={() =>
-						handleAddSelectedItems(itemCategory, product, itemPrice, index)
-					}
 					className="bg-gradient-green bg-gradient-green-hover flex place-items-center text-sm transition-all
     	text-white content-start font-semibold tracking-widest px-3 py-2 rounded-sm max-sm:px-2 trackinwg-wider"
 				>
-					Add to
-					<FaCartShopping className="ml-2" />
+					<span
+						onClick={() =>
+							handleAddSelectedItems(itemCategory, product, itemPrice, index)
+						}
+						className={`flex justify-center items-center
+							${isClient && window.innerWidth <= 640 && itemCategory == "pizza" ? "hidden" : "flex"}
+							`}
+					>
+						Add to
+						<FaCartShopping className="ml-2" />
+					</span>
+
+					{itemCategory == "pizza" && (
+						<Link
+							href={`/menu/${product.id}`}
+							className="hidden max-sm:flex items-center tracking-widest"
+						>
+							<FaChevronUp className="mr-3" />
+							Select
+						</Link>
+					)}
 				</button>
 			</div>
 		</div>

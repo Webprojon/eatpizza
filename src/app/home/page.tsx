@@ -48,14 +48,14 @@ export default function Home() {
 								<Image
 									src={basket}
 									alt="basket img"
-									className="w-[20rem] h-[18rem] max-sm:w-[16rem] max-sm:h-[14rem]"
+									className="w-[24rem] h-[22rem] max-sm:w-[17rem] max-sm:h-[15rem]"
 								/>
 								<Image
 									src={info.img}
 									width={200}
 									height={200}
 									alt="pizza img"
-									className="absolute top-[12%] left-[26%] animate-spin-17s w-[10rem] h-[10rem] max-sm:w-[8rem] max-sm:h-[8rem]"
+									className="absolute top-[11%] left-[26%] animate-spin-17s w-[12rem] h-[12rem] max-sm:w-[8.5rem] max-sm:h-[8.5rem]"
 								/>
 							</div>
 						</motion.div>

@@ -79,8 +79,8 @@ export default function ProductCards({ products }: any) {
 				return (
 					<div
 						key={index}
-						className="w-[30%] rounded-sm overflow-hidden shadow-md max-sm:shadow-sm max-sm:flex max-sm:flex-row
-					  	max-sm:justify-between max-sm:w-full max-sm:rounded-none max-sm:pl-2 dark:bg-slate-800 max-sm:py-4"
+						className="w-[31%] rounded-sm overflow-hidden shadow-md max-sm:shadow-sm max-sm:flex max-sm:flex-row
+						  	max-sm:justify-between max-sm:w-full max-sm:rounded-none max-sm:pl-2 dark:bg-slate-800 max-sm:py-4"
 					>
 						<div
 							className="p-4 bg-gray-50 dark:bg-slate-700 rounded-sm
@@ -122,17 +122,6 @@ export default function ProductCards({ products }: any) {
 							</div>
 							<AddToCartBtn product={product} index={index} />
 						</div>
-						{/*{selectedPizza && selectedPizza.id === id && (
-													<Select
-														id={id}
-														img={img}
-														name={name}
-														description={description}
-														volumes={volumes}
-														hideModal={hideModal}
-														setHideModal={setHideModal}
-													/>
-												)}*/}
 					</div>
 				);
 			})}
