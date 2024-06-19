@@ -189,7 +189,7 @@ export default function AddToCartBtn({ product, index }: any) {
 	return (
 		<div>
 			<div
-				className={`flex rounded-sm my-4 border border-gray-200 dark:border-slate-600`}
+				className={`flex rounded-sm my-6 border border-gray-200 dark:border-slate-600`}
 			>
 				{volumesToMap.map((volume: number, idx: number) => (
 					<div
