@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaCartShopping, FaChevronUp } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 
 const pizzaVolumes = [24, 29, 34, 39];
 const sauceVolumes = [25, 50];
@@ -17,6 +18,7 @@ export default function AddToCartBtn({ product, index }: any) {
 	const { setChoosenPizza } = useGlobalContext();
 	const [selectedVolume, setSelectedVolume] = useState<SelectedItemType>({});
 	const [productPrices, setProductPrices] = useState<SelectedItemType>({});
+	const pathname = usePathname();
 
 	useEffect(() => {
 		setIsClient(true);
@@ -187,14 +189,13 @@ export default function AddToCartBtn({ product, index }: any) {
 	return (
 		<div>
 			<div
-				className={`${itemCategory == "pizza" ? "max-sm:hidden" : "flex"} flex rounded-sm my-4 max-sm:my-1 border
-						 border-gray-200 dark:border-slate-600 max-sm:w-[12rem]`}
+				className={`flex rounded-sm my-4 border border-gray-200 dark:border-slate-600`}
 			>
 				{volumesToMap.map((volume: number, idx: number) => (
 					<div
 						key={idx}
 						className={clsx(
-							`w-full ${itemCategory == "cream" ? "w-full" : "max-sm:w-[4rem]"} text-center py-2 relative text-sm cursor-pointer rounded-sm text-gray-600 dark:text-gray-400`,
+							`w-full text-center py-2 relative text-sm cursor-pointer rounded-sm text-gray-600 dark:text-gray-400`,
 							{
 								"bg-gray-200 text-gray-700 dark:bg-slate-700":
 									selectedVolume[index] === volume ||
@@ -214,19 +215,15 @@ export default function AddToCartBtn({ product, index }: any) {
 			</div>
 
 			<div className="flex justify-between items-end mt-10">
-				<div className="text-md text-gray-700 dark:text-gray-400 font-bold max-sm:text-sm pr-2">
+				<div className="text-md text-gray-700 dark:text-gray-400 font-bold pr-2">
 					<span>{definedPrice(itemCategory, index)} zł</span>
 				</div>
 
-				<button
-					className="bg-gradient-green bg-gradient-green-hover flex place-items-center text-sm transition-all
-    	text-white content-start font-semibold tracking-widest px-4 py-2 rounded-sm max-sm:px-2 trackinwg-wider"
-				>
+				<button>
 					<Link
+						className="bg-gradient-green bg-gradient-green-hover flex place-items-center text-sm transition-all
+          	text-white content-start font-semibold tracking-widest px-4 py-2 rounded-sm trackinwg-wider"
 						href={"/menu"}
-						className={`flex justify-center items-center
-							${isClient && window.innerWidth <= 640 && itemCategory == "pizza" ? "hidden" : "flex"}
-							`}
 						onClick={() =>
 							handleAddSelectedItems(itemCategory, product, itemPrice, index)
 						}
@@ -234,16 +231,6 @@ export default function AddToCartBtn({ product, index }: any) {
 						Add to
 						<FaCartShopping className="ml-2" />
 					</Link>
-
-					{itemCategory == "pizza" && (
-						<Link
-							href={`/menu/${product.id}`}
-							className="hidden max-sm:flex items-center tracking-widest"
-						>
-							<FaChevronUp className="mr-3" />
-							Select
-						</Link>
-					)}
 				</button>
 			</div>
 		</div>

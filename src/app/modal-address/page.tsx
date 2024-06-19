@@ -15,15 +15,15 @@ export default function MapModalDesktop() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="mt-[6rem] mx-auto max-sm:w-full"
+			className="mt-[6rem] mx-auto"
 		>
-			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto max-sm:w-[96%]">
-				<div className="flex justify-between gap-x-6 mt-3 max-sm:flex-col">
-					<div className="w-[60%] max-sm:w-full">
+			<div className="relative w-[65rem] bg-gray-50 dark:bg-slate-800 px-6 pt-4 pb-8 rounded-sm mx-auto">
+				<div className="flex justify-between gap-x-6 mt-3">
+					<div className="w-[60%]">
 						<Map />
 					</div>
-					<div className="w-[40%] max-sm:w-full">
-						<h2 className="font-semibold text-gray-700 dark:text-gray-300 my-5 max-sm:text-xl">
+					<div className="w-[40%]">
+						<h2 className="font-semibold text-gray-700 dark:text-gray-300 my-5">
 							Enter your address
 						</h2>
 						<div>
@@ -36,9 +36,7 @@ export default function MapModalDesktop() {
 									name="useraddress"
 									autoComplete="off"
 									placeholder="Address"
-									className={handleInputClasses(
-										"w-full max-sm:py-3 max-sm:text-lg dark:border-gray-500",
-									)}
+									className={handleInputClasses("w-full dark:border-gray-500")}
 								/>
 								<div className="flex gap-x-6">
 									<input
@@ -47,7 +45,7 @@ export default function MapModalDesktop() {
 										placeholder="Flat"
 										autoComplete="off"
 										className={handleInputClasses(
-											"w-[50%] max-sm:py-3 max-sm:text-lg dark:border-gray-500",
+											"w-[50%] dark:border-gray-500",
 										)}
 									/>
 									<input
@@ -56,14 +54,11 @@ export default function MapModalDesktop() {
 										autoComplete="off"
 										placeholder="Floor"
 										className={handleInputClasses(
-											"w-[50%] max-sm:py-3 max-sm:text-lg dark:border-gray-500",
+											"w-[50%] dark:border-gray-500",
 										)}
 									/>
 								</div>
-								<button
-									className="self-end rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider
-									max-sm:py-3 max-sm:w-full max-sm:mt-[1.5rem]"
-								>
+								<button className="self-end rounded-sm bg-gradient-green bg-gradient-green-hover text-white py-[.4rem] px-4 font-semibold tracking-wider">
 									Submit form
 								</button>
 							</form>

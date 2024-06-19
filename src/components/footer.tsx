@@ -9,13 +9,13 @@ export default function Footer() {
 		<footer
 			className={`${pathname === "/" ? "hidden" : pathname === "/home" ? "hidden" : ""} mt-8 w-full bg-gray-50 dark:bg-transparent`}
 		>
-			<div className="flex justify-between max-w-[78rem] mx-auto py-[1rem] tracking-wider max-sm:flex-col max-sm:py-0 max-sm:p-3 max-sm:text-center">
+			<div className="flex justify-between max-w-[78rem] mx-auto py-[1rem] tracking-wider">
 				<div>
 					<a href="https://portfolio-webprojon.vercel.app/" target="blank">
 						© All Rights Reserved. Tokhirjon Khasanov ❤️
 					</a>
 				</div>
-				<div className="max-sm:pt-2 font-semibold">
+				<div className="font-semibold">
 					<LogoutLink>Log out</LogoutLink>
 				</div>
 			</div>

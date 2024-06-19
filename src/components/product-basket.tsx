@@ -72,10 +72,7 @@ export default function DesktopBasket() {
 	};
 
 	return (
-		<div
-			className="sticky top-[5rem] transition-all w-[18rem] h-[23rem] mt-[6.5rem] flex flex-col gap-y-2
-		max-sm:hidden"
-		>
+		<div className="sticky top-[5rem] transition-all w-[18rem] h-[23rem] mt-[6.5rem] flex flex-col gap-y-2">
 			<div className="bg-white dark:bg-slate-800 rounded-sm shadow-md">
 				<div className={`relative ${open ? "h-[9.2vh]" : "h-[48vh]"}`}>
 					<div
@@ -88,7 +85,7 @@ export default function DesktopBasket() {
 
 						<Image
 							src={animpizza}
-							className="animate-spin-3s hover:animate-none w-[2.2em] h-[2.2rem] mr-3 max-sm:mr-2 max-sm:w-[2.1rem] max-sm:h-[2.1rem]"
+							className="animate-spin-3s hover:animate-none w-[2.2em] h-[2.2rem] mr-3"
 							quality="95"
 							priority={true}
 							alt="circle pizza"

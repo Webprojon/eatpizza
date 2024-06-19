@@ -11,14 +11,14 @@ export default function Contact() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="max-w-[78rem] bg-slate-800 mx-auto mt-[6rem] py-5 px-10 rounded-sm max-sm:w-[95%] max-sm:px-4"
+			className="max-w-[78rem] bg-slate-800 mx-auto mt-[6rem] py-5 px-10 rounded-sm"
 		>
-			<h2 className="font-semibold mb-5 text-center text-2xl tracking-wider text-gray-600 dark:text-gray-300 max-sm:text-2xl max-sm:mb-5">
+			<h2 className="font-semibold mb-5 text-center text-2xl tracking-wider text-gray-600 dark:text-gray-300">
 				Feedback Us
 			</h2>
 			<form
 				action={SubmitFormFeedback}
-				className="flex flex-col gap-y-4 w-[40rem] max-sm:w-[100%]"
+				className="flex flex-col gap-y-4 w-[40rem]"
 			>
 				<input
 					type="text"
@@ -26,8 +26,7 @@ export default function Contact() {
 					placeholder="Enter your name"
 					autoComplete="off"
 					className="border py-3 px-4 tracking-wider rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500
-					dark:outline-none dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 max-sm:py-3 max-sm:text-lg
-					 dark:border-gray-500"
+					dark:outline-none dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 dark:border-gray-500"
 				/>
 				<textarea
 					name="userfeedback"
@@ -35,11 +34,11 @@ export default function Contact() {
 					id="userfeedback"
 					placeholder="Type your feedback here..."
 					className="border p-4 rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500 dark:outline-none 
-							dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 max-sm:text-lg dark:border-gray-500"
+							dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 dark:border-gray-500"
 				></textarea>
 				<button
 					className="self-end bg-gradient-green bg-gradient-green-hover font-semibold tracking-wider text-white px-4 py-2 rounded-sm 
-				     	transition-all text-md max-sm:text-lg max-sm:mt-2 max-sm:py-3 max-sm:w-full"
+				     	transition-all text-md"
 				>
 					Submit form
 				</button>

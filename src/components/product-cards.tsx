@@ -72,23 +72,19 @@ export default function ProductCards({ products }: any) {
 	}, [selectValue, products]);
 
 	return (
-		<div className="flex flex-wrap gap-6 max-sm:gap-y-4">
+		<div className="flex flex-wrap gap-6">
 			{items.map((product: any, index: number) => {
 				const { id, itemCategory, itemImg, itemName, itemDescription } =
 					product;
 				return (
 					<div
 						key={index}
-						className="w-[31%] rounded-sm overflow-hidden shadow-md max-sm:shadow-sm max-sm:flex max-sm:flex-row
-						  	max-sm:justify-between max-sm:w-full max-sm:rounded-none max-sm:pl-2 dark:bg-slate-800 max-sm:py-4"
+						className="w-[31%] rounded-sm overflow-hidden shadow-md dark:bg-slate-800"
 					>
-						<div
-							className="p-4 bg-gray-50 dark:bg-slate-700 rounded-sm
-						   transition-all max-sm:from-gray-300 max-sm:px-2 max-sm:w-[10rem] max-sm:flex max-sm:my-2"
-						>
+						<div className="p-4 bg-gray-50 dark:bg-slate-700 rounded-sm transition-all">
 							<Link href={`/menu/${id}`}>
 								<Image
-									className={`mx-auto max-sm:h-[8rem] max-sm:w-[9rem]
+									className={`mx-auto
 									${itemCategory == "pizza" ? "h-[11rem] w-[11rem] hover:animate-spin-17s" : "h-[8rem] w-[8rem]"}
 									`}
 									src={itemImg}
@@ -100,10 +96,10 @@ export default function ProductCards({ products }: any) {
 								/>
 							</Link>
 						</div>
-						<div className="p-4 max-sm:flex max-sm:flex-col max-sm:justify-between max-sm:pr-[.6rem] max-sm:pb-2 max-sm:pt-0">
+						<div className="p-4">
 							<div>
 								<div className="flex items-center justify-between">
-									<h2 className="tracking-wider font-semibold text-xl max-sm:pb-1 max-sm:text-gray-700 dark:text-gray-400">
+									<h2 className="tracking-wider font-semibold text-xl dark:text-gray-400">
 										{itemName}
 									</h2>
 									<Link
@@ -113,10 +109,7 @@ export default function ProductCards({ products }: any) {
 										<FaInfo className="size-3" />
 									</Link>
 								</div>
-								<p
-									className="tracking-wide w-[15rem] max-sm:text-sm py-1 text-gray-600 dark:text-gray-400 max-sm:py-0
-						        max-sm:w-[11rem]"
-								>
+								<p className="tracking-wide w-[15rem] py-1 text-gray-600 dark:text-gray-400">
 									{shortenDescription(itemDescription, 20)}
 								</p>
 							</div>

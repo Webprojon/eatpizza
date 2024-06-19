@@ -70,7 +70,7 @@ export default function MobileBasket() {
 			className="w-[100%] max-w-[78rem] mx-auto mt-[6rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm p-10 max-sm:w-[96%]">
+				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm p-10">
 					<h1 className="font-semibold tracking-wider text-lg text-center">
 						You have no item selected 😏
 					</h1>
@@ -91,7 +91,7 @@ export default function MobileBasket() {
 							className="flex items-center cursor-pointer"
 						>
 							<FaChevronLeft className="size-6" />
-							<span className="max-sm:hidden pl-2 font-semibold">Back</span>
+							<span className="pl-2 font-semibold">Back</span>
 						</div>
 
 						<span className="font-bold tracking-wide">
@@ -100,7 +100,7 @@ export default function MobileBasket() {
 						<ImBin onClick={() => clearAllItems()} className="size-6" />
 					</div>
 					{/* Basket */}
-					<div className="w-full max-sm:py-2 px-4 py-10 bg-gray-50 dark:bg-slate-800">
+					<div className="w-full px-4 py-10 bg-gray-50 dark:bg-slate-800">
 						{choosenPizza &&
 							choosenPizza.map((item: any, index: number) => (
 								<div
@@ -109,11 +109,11 @@ export default function MobileBasket() {
 										setNumberOfItems(choosenPizza.length);
 									}}
 									key={index}
-									className="mb-6 max-sm:py-2 shadow-md"
+									className="mb-6 shadow-md"
 								>
 									<div className="flex items-start justify-between">
 										<Image
-											className="max-sm:w-[7.4rem] w-[10rem]"
+											className="w-[10rem]"
 											quality="95"
 											priority={true}
 											width={200}
@@ -121,13 +121,13 @@ export default function MobileBasket() {
 											src={item.itemImg}
 											alt={item.itemName}
 										/>
-										<div className="flex items-center justify-between flex-row-reverse w-[25rem] max-sm:w-[12.9rem] max-sm:flex-col">
-											<div className="flex justify-between items-center gap-x-6 max-sm:gap-x-0 max-sm:items-start max-sm:w-[12.4rem]">
+										<div className="flex items-center justify-between flex-row-reverse w-[25rem]">
+											<div className="flex justify-between items-center gap-x-6">
 												<div>
 													<h2 className="font-semibold text-lg text-gray-700 dark:text-gray-300">
 														{item.itemName}
 													</h2>
-													<p className="hidden max-sm:block text-sm text-gray-500 dark:text-gray-300 font-medium">
+													<p className="hidden text-sm text-gray-500 dark:text-gray-300 font-medium">
 														{item.itemDesc &&
 															shortenDescription(item.itemDesc, 20)}
 													</p>
@@ -138,7 +138,7 @@ export default function MobileBasket() {
 												/>
 											</div>
 
-											<div className="max-sm:mt-3 flex justify-between gap-x-10">
+											<div className="flex justify-between gap-x-10">
 												<Counter
 													index={index}
 													total={item.itemPrice}
@@ -155,7 +155,7 @@ export default function MobileBasket() {
 							))}
 
 						<div className="flex items-end justify-between">
-							<form action={SubmitFormBasket} className="max-sm:hidden flex">
+							<form action={SubmitFormBasket} className="flex">
 								<Input
 									type="text"
 									name="promocode"
@@ -178,7 +178,7 @@ export default function MobileBasket() {
 					</div>
 					{/* Contact information */}
 					<div className="bg-gray-50 dark:bg-slate-800 px-4 py-7">
-						<h2 className="mb-2 font-bold text-gray-600 dark:text-gray-300 tracking-wider text-lg max-sm:text-md">
+						<h2 className="mb-2 font-bold text-gray-600 dark:text-gray-300 tracking-wider text-lg">
 							Contact information
 						</h2>
 
@@ -186,7 +186,7 @@ export default function MobileBasket() {
 							action={SubmitFormDelivery}
 							className="relative flex flex-col gap-y-4"
 						>
-							<div className="flex gap-x-4 max-sm:flex-col max-sm:gap-y-6">
+							<div className="flex gap-x-4">
 								<Input type="text" name="username" text="Enter your name" />
 								<div className="relative">
 									<Input type="number" name="userphonenumber" direction="pl" />
@@ -212,7 +212,7 @@ export default function MobileBasket() {
 							</div>
 							<button
 								className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-sm transition-all
-							mt-[1.5rem] max-sm:w-full max-sm:py-3"
+							mt-[1.5rem]"
 							>
 								Submit the order
 							</button>
