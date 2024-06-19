@@ -213,26 +213,27 @@ export default function AddToCartBtn({ product, index }: any) {
 				))}
 			</div>
 
-			<div className="flex justify-between items-end mt-5">
+			<div className="flex justify-between items-end mt-10">
 				<div className="text-md text-gray-700 dark:text-gray-400 font-bold max-sm:text-sm pr-2">
 					<span>{definedPrice(itemCategory, index)} zł</span>
 				</div>
 
 				<button
 					className="bg-gradient-green bg-gradient-green-hover flex place-items-center text-sm transition-all
-    	text-white content-start font-semibold tracking-widest px-3 py-2 rounded-sm max-sm:px-2 trackinwg-wider"
+    	text-white content-start font-semibold tracking-widest px-4 py-2 rounded-sm max-sm:px-2 trackinwg-wider"
 				>
-					<span
-						onClick={() =>
-							handleAddSelectedItems(itemCategory, product, itemPrice, index)
-						}
+					<Link
+						href={"/menu"}
 						className={`flex justify-center items-center
 							${isClient && window.innerWidth <= 640 && itemCategory == "pizza" ? "hidden" : "flex"}
 							`}
+						onClick={() =>
+							handleAddSelectedItems(itemCategory, product, itemPrice, index)
+						}
 					>
 						Add to
 						<FaCartShopping className="ml-2" />
-					</span>
+					</Link>
 
 					{itemCategory == "pizza" && (
 						<Link
