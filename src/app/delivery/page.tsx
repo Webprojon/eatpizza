@@ -156,10 +156,7 @@ export default function MobileBasket() {
 							))}
 
 						<div className="flex items-end justify-between">
-							<form
-								// action={SubmitFormBasket}
-								className="flex"
-							>
+							<form className="flex">
 								<Input
 									type="text"
 									name="promocode"
