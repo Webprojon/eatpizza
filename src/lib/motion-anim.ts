@@ -8,8 +8,8 @@ export const fadeInAnimationsVariants = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			duration: 0.09 * index,
-			delay: 0.07 * index,
+			duration: 0.07 * index,
+			delay: 0.05 * index,
 		},
 	}),
 };

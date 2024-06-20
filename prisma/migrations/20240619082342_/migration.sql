@@ -11,3 +11,17 @@ CREATE TABLE "Products" (
 
     CONSTRAINT "Products_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateTable for Order
+CREATE TABLE "Order" (
+    "id" TEXT NOT NULL,
+    "userName" TEXT NOT NULL,
+    "userPhone" TEXT NOT NULL,
+    "userAddress" TEXT NOT NULL,
+    "userFlat" TEXT NOT NULL,
+    "userFloor" TEXT NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
+    "createAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Order_pkey" PRIMARY KEY ("id")
+);

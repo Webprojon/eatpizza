@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Input from "../../components/input";
 import { animFromBottomToTop } from "@/lib/motion-anim";
 import { SubmitFormBasket, SubmitFormDelivery } from "@/actions/action";
+import Link from "next/link";
 
 export default function MobileBasket() {
 	const router = useRouter();
@@ -210,12 +211,13 @@ export default function MobileBasket() {
 									/>
 								</div>
 							</div>
-							<button
+							<Link
+								href={"/ordered"}
 								className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-sm transition-all
 							mt-[1.5rem]"
 							>
 								Submit the order
-							</button>
+							</Link>
 						</form>
 					</div>
 				</div>
