@@ -2,7 +2,7 @@
 import Map from "./map";
 import { motion } from "framer-motion";
 import { animFromBottomToTop } from "@/lib/motion-anim";
-import { SubmitFormModalAddress } from "@/actions/action";
+//import { SubmitFormModalAddress } from "@/actions/action";
 
 export default function MapModalDesktop() {
 	const handleInputClasses = (width: string) => {
@@ -28,7 +28,7 @@ export default function MapModalDesktop() {
 						</h2>
 						<div>
 							<form
-								action={SubmitFormModalAddress}
+								//action={SubmitFormModalAddress}
 								className="flex flex-col gap-y-6"
 							>
 								<input

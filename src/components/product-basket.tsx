@@ -112,7 +112,7 @@ export default function DesktopBasket() {
 								</div>
 							) : (
 								<div>
-									<div className="border-b h-[22vh] overflow-y-scroll no-scrollbar">
+									<div className="border-b h-[24vh] overflow-y-scroll no-scrollbar">
 										<div className="mb-2 flex justify-between w-full tracking-wider">
 											<span>({numberOfItems})</span>
 											<span onClick={clearAllItems} className="cursor-pointer">
@@ -187,8 +187,8 @@ export default function DesktopBasket() {
 												);
 											})}
 									</div>
-									<div>
-										<div className="my-1 flex items-center justify-between w-full">
+									<div className="mt-6">
+										<div className="flex items-center justify-between w-full">
 											<h3 className="text-md tracking-wider font-bold">
 												Total:
 											</h3>

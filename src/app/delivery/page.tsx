@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Input from "../../components/input";
 import { animFromBottomToTop } from "@/lib/motion-anim";
-import { SubmitFormBasket, SubmitFormDelivery } from "@/actions/action";
+import { SubmitFormDelivery } from "@/actions/action";
 import Link from "next/link";
 
 export default function MobileBasket() {
@@ -156,7 +156,10 @@ export default function MobileBasket() {
 							))}
 
 						<div className="flex items-end justify-between">
-							<form action={SubmitFormBasket} className="flex">
+							<form
+								// action={SubmitFormBasket}
+								className="flex"
+							>
 								<Input
 									type="text"
 									name="promocode"

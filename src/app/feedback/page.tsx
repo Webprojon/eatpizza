@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { animFromBottomToTop } from "@/lib/motion-anim";
-import { SubmitFormFeedback } from "@/actions/action";
+//import { SubmitFormFeedback } from "@/actions/action";
 
 export default function Contact() {
 	return (
@@ -17,7 +17,7 @@ export default function Contact() {
 				Feedback Us
 			</h2>
 			<form
-				action={SubmitFormFeedback}
+				//action={SubmitFormFeedback}
 				className="flex flex-col gap-y-4 w-[40rem]"
 			>
 				<input
