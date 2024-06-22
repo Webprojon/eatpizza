@@ -1,23 +1,36 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { animFromBottomToTop } from "@/lib/motion-anim";
-//import { SubmitFormFeedback } from "@/actions/action";
+import { SubmitFormFeedback } from "@/actions/feedback-action";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-export default function Contact() {
+export default function Feedback() {
+	const router = useRouter();
+
+	const handleSubmited = () => {
+		setTimeout(() => {
+			toast.success("Your feedback is saved 😊 !");
+		}, 1000);
+
+		setTimeout(() => {
+			router.push("/");
+		}, 1800);
+	};
+
 	return (
 		<motion.section
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="max-w-[78rem] bg-slate-800 mx-auto mt-[6rem] py-5 px-10 rounded-sm"
+			className="max-w-[78rem] mx-auto mt-[6rem] py-5 px-10 rounded-sm dark:bg-black/40 backdrop-blur-sm"
 		>
 			<h2 className="font-semibold mb-5 text-center text-2xl tracking-wider text-gray-600 dark:text-gray-300">
 				Feedback Us
 			</h2>
 			<form
-				//action={SubmitFormFeedback}
+				action={SubmitFormFeedback}
 				className="flex flex-col gap-y-4 w-[40rem]"
 			>
 				<input
@@ -37,6 +50,7 @@ export default function Contact() {
 							dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 dark:border-gray-500"
 				></textarea>
 				<button
+					onClick={handleSubmited}
 					className="self-end bg-gradient-green bg-gradient-green-hover font-semibold tracking-wider text-white px-4 py-2 rounded-sm 
 				     	transition-all text-md"
 				>

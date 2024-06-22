@@ -26,6 +26,26 @@ model Order {
   userAddress String
   userFlat    String
   userFloor   String
-  updateAt    DateTime @updatedAt
   createAt    DateTime @default(now())
+}
+
+model Address {
+  id          String   @id @default(cuid())
+  userAddress String
+  userFlat    String
+  userFloor   String
+  createAt    DateTime @default(now())
+}
+
+model Feedback {
+  id           String   @id @default(cuid())
+  userName     String
+  userFeedback String
+  createAt     DateTime @default(now())
+}
+
+model Promocode {
+  id        String   @id @default(cuid())
+  promocode String
+  createAt  DateTime @default(now())
 }

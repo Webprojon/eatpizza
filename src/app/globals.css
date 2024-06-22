@@ -21,6 +21,10 @@
 		}
 	}
 
+	.animate-spin-25s {
+		animation: spin 25s linear infinite;
+	}
+
 	.animate-spin-17s {
 		animation: spin 17s linear infinite;
 	}

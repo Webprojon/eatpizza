@@ -11,10 +11,10 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Input from "../../components/input";
 import { animFromBottomToTop } from "@/lib/motion-anim";
-import { SubmitFormDelivery } from "@/actions/action";
-import Link from "next/link";
+import { SubmitFormDelivery } from "@/actions/details-action";
+import { SubmitFormBasket } from "@/actions/promocode-action";
 
-export default function MobileBasket() {
+export default function Basket() {
 	const router = useRouter();
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [numberOfItems, setNumberOfItems] = useState(0);
@@ -63,6 +63,16 @@ export default function MobileBasket() {
 		setTotalPrice((prevPrice) => prevPrice + Math.floor(total));
 	};
 
+	const handleSubmited = () => {
+		setTimeout(() => {
+			toast.success("We got your address details");
+		}, 1200);
+
+		setTimeout(() => {
+			router.push("/menu");
+		}, 1800);
+	};
+
 	return (
 		<motion.div
 			initial="initial"
@@ -71,7 +81,7 @@ export default function MobileBasket() {
 			className="w-[100%] max-w-[78rem] mx-auto mt-[6rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] dark:bg-slate-800 rounded-sm p-10">
+				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
 					<h1 className="font-semibold tracking-wider text-lg text-center">
 						You have no item selected 😏
 					</h1>
@@ -86,7 +96,7 @@ export default function MobileBasket() {
 			) : (
 				<div>
 					{/* Header */}
-					<div className="flex justify-between items-center w-full h-10 py-8 px-4 bg-gray-50 dark:bg-slate-800">
+					<div className="flex justify-between items-center w-full h-10 py-8 px-4 bg-gray-50 dark:bg-black/40 backdrop-blur-sm">
 						<div
 							onClick={() => router.push("/menu")}
 							className="flex items-center cursor-pointer"
@@ -101,7 +111,7 @@ export default function MobileBasket() {
 						<ImBin onClick={() => clearAllItems()} className="size-6" />
 					</div>
 					{/* Basket */}
-					<div className="w-full px-4 py-10 bg-gray-50 dark:bg-slate-800">
+					<div className="w-full px-4 py-10 bg-gray-50 dark:bg-black/40 backdrop-blur-sm">
 						{choosenPizza &&
 							choosenPizza.map((item: any, index: number) => (
 								<div
@@ -110,7 +120,7 @@ export default function MobileBasket() {
 										setNumberOfItems(choosenPizza.length);
 									}}
 									key={index}
-									className="mb-6 shadow-md"
+									className="mb-8"
 								>
 									<div className="flex items-start justify-between">
 										<Image
@@ -156,7 +166,7 @@ export default function MobileBasket() {
 							))}
 
 						<div className="flex items-end justify-between">
-							<form className="flex">
+							<form action={SubmitFormBasket} className="flex">
 								<Input
 									type="text"
 									name="promocode"
@@ -178,7 +188,7 @@ export default function MobileBasket() {
 						</div>
 					</div>
 					{/* Contact information */}
-					<div className="bg-gray-50 dark:bg-slate-800 px-4 py-7">
+					<div className="bg-gray-50 dark:bg-black/40 backdrop-blur-sm px-4 py-7">
 						<h2 className="mb-2 font-bold text-gray-600 dark:text-gray-300 tracking-wider text-lg">
 							Contact information
 						</h2>
@@ -188,7 +198,7 @@ export default function MobileBasket() {
 							className="relative flex flex-col gap-y-4"
 						>
 							<div className="flex gap-x-4">
-								<Input type="text" name="username" text="Enter your name" />
+								<Input type="text" name="username" text="Your name" />
 								<div className="relative">
 									<Input type="number" name="userphonenumber" direction="pl" />
 									<span className="absolute left-2 top-[50%] translate-y-[-50%] text-gray-500 dark:text-gray-300">
@@ -211,13 +221,13 @@ export default function MobileBasket() {
 									/>
 								</div>
 							</div>
-							<Link
-								href={"/ordered"}
+							<button
+								onClick={handleSubmited}
 								className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-sm transition-all
 							mt-[1.5rem]"
 							>
 								Submit the order
-							</Link>
+							</button>
 						</form>
 					</div>
 				</div>

@@ -85,7 +85,7 @@ export default function ProductCards({ products }: any) {
 					}}
 					custom={index}
 					key={index}
-					className="w-[31%] rounded-sm overflow-hidden shadow-md dark:bg-slate-800"
+					className="w-[31%] rounded-sm overflow-hidden shadow-md dark:bg-black/40 backdrop-blur-sm"
 				>
 					<div className="p-4 bg-gray-50 dark:bg-slate-700 rounded-sm transition-all">
 						<Link href={`/menu/${product.id}`}>

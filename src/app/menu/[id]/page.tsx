@@ -12,7 +12,7 @@ export default async function Product({ params }: { params: { id: string } }) {
 	});
 
 	return (
-		<div className="relative flex gap-x-10 items-end justify-between w-[100%] max-w-[50rem] mx-auto mt-[6rem] dark:bg-slate-800 p-6 rounded-md">
+		<div className="relative flex gap-x-10 items-end justify-between w-[100%] max-w-[50rem] mx-auto mt-[6rem] p-6 rounded-md dark:bg-black/40 backdrop-blur-sm">
 			<Link href={"/menu"} className="absolute top-6 right-5">
 				<CgClose className="size-7" />
 			</Link>

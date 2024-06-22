@@ -53,7 +53,7 @@ export default function Header() {
 			initial="initial"
 			animate="animate"
 			variants={animFromTopToBottom}
-			className={`bg-gray-50 z-[999] fixed w-full px-10 ${scroll ? "dark:bg-slate-800" : "dark:bg-transparent"}`}
+			className={`bg-gray-50 z-[999] fixed w-full px-10 ${scroll ? "dark:bg-black/50 backdrop-blur-lg" : "dark:bg-transparent"}`}
 		>
 			<nav className="flex justify-between items-center w-[78rem] h-[4.7rem] mx-auto">
 				<div className="flex items-center justify-center cursor-pointer">

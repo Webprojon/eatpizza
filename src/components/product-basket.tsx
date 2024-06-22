@@ -10,7 +10,7 @@ import Counter from "./counter";
 import toast from "react-hot-toast";
 import { useGlobalContext } from "@/context/global-context";
 import { useRouter } from "next/navigation";
-//import { SubmitFormBasket } from "@/actions/action";
+import { SubmitFormBasket } from "@/actions/promocode-action";
 
 export default function DesktopBasket() {
 	const { choosenPizza, setChoosenPizza } = useGlobalContext();
@@ -212,7 +212,7 @@ export default function DesktopBasket() {
 			</div>
 
 			<form
-				//action={SubmitFormBasket}
+				action={SubmitFormBasket}
 				className="relative shadow-md bg-white dark:bg-slate-800 rounded-sm py-[.7rem] px-4"
 			>
 				<input
