@@ -65,11 +65,11 @@ export default function Basket() {
 
 	const handleSubmited = () => {
 		setTimeout(() => {
-			toast.success("We got your address details");
+			toast.success("We have saved your address details 😊");
 		}, 1200);
 
 		setTimeout(() => {
-			router.push("/menu");
+			router.push("/submited-orders");
 		}, 1800);
 	};
 
