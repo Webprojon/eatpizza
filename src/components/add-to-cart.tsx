@@ -4,8 +4,7 @@ import { ItemsType, SelectedItemType } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaCartShopping, FaChevronUp } from "react-icons/fa6";
-import { usePathname } from "next/navigation";
+import { FaCartShopping } from "react-icons/fa6";
 
 const pizzaVolumes = [24, 29, 34, 39];
 const sauceVolumes = [25, 50];
@@ -18,7 +17,6 @@ export default function AddToCartBtn({ product, index }: any) {
 	const { setChoosenPizza } = useGlobalContext();
 	const [selectedVolume, setSelectedVolume] = useState<SelectedItemType>({});
 	const [productPrices, setProductPrices] = useState<SelectedItemType>({});
-	const pathname = usePathname();
 
 	useEffect(() => {
 		setIsClient(true);
