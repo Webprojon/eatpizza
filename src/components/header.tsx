@@ -49,8 +49,8 @@ export default function Header() {
 	return (
 		<header>
 			<nav
-				className="relative flex justify-between items-center px-2 sm:pl-4 sm:pr-10 bg-slate-200 dark:bg-slate-900
-				 dark:sm:bg-black/30 w-full h-[11vh] border-b border-gray-600"
+				className="flex justify-between items-center px-2 sm:pl-4 sm:pr-10 bg-slate-200 dark:bg-slate-900
+				 dark:sm:bg-black/30 h-[11vh] border-b border-gray-600"
 			>
 				<div className="flex items-center justify-center cursor-pointer">
 					<Image
@@ -81,16 +81,16 @@ export default function Header() {
 
 			<div
 				{...handlers}
-				className={`sm:hidden fixed left-0 bg-black/20 w-full h-full duration-300 ${
+				className={`z-10 sm:hidden fixed left-0 bg-black/40 w-full h-full duration-300 ${
 					isVisible ? "block" : "hidden"
 				}`}
 			></div>
 
 			<aside
-				className={`z-10 absolute left-0 border-r border-gray-600 bg-slate-200 dark:bg-slate-900 dark:sm:bg-black/30 h-[89vh] w-[19.5rem] sm:w-[19rem]
+				className={`z-10 fixed left-0 border-r border-gray-600 bg-slate-200 dark:bg-slate-900 dark:sm:bg-black/30 min-h-screen sm:h-[89vh] w-[19.5rem] sm:w-[19rem]
 						 transition-transform duration-200 ${
 								isVisible ? "translate-x-0" : "-translate-x-full"
-							} sm:translate-x-0`}
+							} sm:-translate-x-full md:translate-x-0`}
 			>
 				<button
 					onClick={() => router.push("/modal-address")}

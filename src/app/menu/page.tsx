@@ -12,14 +12,16 @@ export default async function Products() {
 
 	return (
 		<Suspense fallback={<Loading />}>
-			<section className="sm:absolute top-[6.5rem] left-[20.5rem] h-[84.5vh] w-[73.6rem] overflow-y-auto no-scrollbar">
+			<section className="sm:absolute top-[6.5rem] mx-auto left-[20.5rem] sm:h-[84.5vh] sm:w-[73.6rem] sm:overflow-y-auto no-scrollbar">
 				<div className="flex flex-row justify-between">
 					<div>
 						<div className="relative">
 							<OpenBasketMobile />
 						</div>
 
-						<section className={`w-[54rem]`}>
+						<section
+							className={`mx-auto mt-2 px-2 sm:px-0 sm:mt-0 sm:w-[54rem]`}
+						>
 							<div>
 								<SelectCategory />
 

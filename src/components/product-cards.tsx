@@ -74,7 +74,7 @@ export default function ProductCards({ products }: any) {
 	}, [selectValue, products]);
 
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
+		<div className="grid grid-cols-2 gap-6 mx-auto sm:grid-cols-2 lg:grid-cols-3">
 			{items.map((product: any, index: number) => (
 				<motion.div
 					variants={fadeInAnimationsVariants}
@@ -103,23 +103,23 @@ export default function ProductCards({ products }: any) {
 						</Link>
 					</div>
 					<div className="p-4">
-						<div>
-							<div className="flex items-center justify-between">
-								<h2 className="tracking-wider font-semibold text-xl dark:text-gray-400">
-									{product.itemName}
-								</h2>
-								<Link
-									href={`/menu/${product.id}`}
-									className="border rounded-full p-1 cursor-pointer hover:scale-110 transition-all"
-								>
-									<FaInfo className="size-3" />
-								</Link>
-							</div>
+						<div className="flex items-center justify-between">
+							<h2 className="tracking-wider font-semibold text-xl dark:text-gray-400">
+								{product.itemName}
+							</h2>
+							<Link
+								href={`/menu/${product.id}`}
+								className="border rounded-full p-1 cursor-pointer hover:scale-110 transition-all"
+							>
+								<FaInfo className="size-3" />
+							</Link>
+						</div>
+						<div className="hidden sm:block">
 							<p className="tracking-wide w-[15rem] py-1 text-gray-600 dark:text-gray-400">
 								{shortenDescription(product.itemDescription, 20)}
 							</p>
+							<AddToCartBtn product={product} index={index} />
 						</div>
-						<AddToCartBtn product={product} index={index} />
 					</div>
 				</motion.div>
 			))}

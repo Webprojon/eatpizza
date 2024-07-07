@@ -72,7 +72,7 @@ export default function DesktopBasket() {
 	};
 
 	return (
-		<div className="sticky top-[3.4rem] transition-all w-[18rem] h-[23rem] flex flex-col gap-y-2">
+		<div className="hidden md:flex sticky top-[3.4rem] transition-all w-[18rem] h-[23rem] flex-col gap-y-2">
 			<div className="bg-white dark:bg-slate-800 dark:bg-black/40 backdrop-blur-sm rounded-sm shadow-md">
 				<div className={`relative ${open ? "h-[9.2vh]" : "h-[48vh]"}`}>
 					<div
