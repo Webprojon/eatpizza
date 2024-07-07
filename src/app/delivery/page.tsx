@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Input from "../../components/input";
 import { animFromBottomToTop } from "@/lib/motion-anim";
-import { SubmitFormDelivery } from "@/actions/details-action";
 import { SubmitFormBasket } from "@/actions/promocode-action";
 
 export default function Basket() {
@@ -66,11 +65,7 @@ export default function Basket() {
 	const handleSubmited = () => {
 		setTimeout(() => {
 			toast.success("We have saved your address details 😊");
-		}, 1200);
-
-		setTimeout(() => {
-			router.push("/submited-orders");
-		}, 1800);
+		}, 1000);
 	};
 
 	return (
@@ -193,10 +188,7 @@ export default function Basket() {
 							Contact information
 						</h2>
 
-						<form
-							action={SubmitFormDelivery}
-							className="relative flex flex-col gap-y-4"
-						>
+						<form className="relative flex flex-col gap-y-4">
 							<div className="flex gap-x-4">
 								<Input type="text" name="username" text="Your name" />
 								<div className="relative">
