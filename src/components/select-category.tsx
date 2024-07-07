@@ -10,7 +10,7 @@ export default function SelectCategory() {
 	};
 
 	return (
-		<form className="mt-10 mb-6">
+		<form className="mb-4">
 			<select
 				value={selectValue}
 				onChange={handleSelectValue}

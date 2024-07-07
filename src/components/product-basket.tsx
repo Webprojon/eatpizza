@@ -72,8 +72,8 @@ export default function DesktopBasket() {
 	};
 
 	return (
-		<div className="sticky top-[5rem] transition-all w-[18rem] h-[23rem] mt-[6.5rem] flex flex-col gap-y-2">
-			<div className="bg-white dark:bg-slate-800 rounded-sm shadow-md">
+		<div className="sticky top-[3.4rem] transition-all w-[18rem] h-[23rem] flex flex-col gap-y-2">
+			<div className="bg-white dark:bg-slate-800 dark:bg-black/40 backdrop-blur-sm rounded-sm shadow-md">
 				<div className={`relative ${open ? "h-[9.2vh]" : "h-[48vh]"}`}>
 					<div
 						onClick={isOpenCart}

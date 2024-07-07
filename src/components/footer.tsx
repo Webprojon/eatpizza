@@ -7,7 +7,7 @@ export default function Footer() {
 
 	return (
 		<footer
-			className={`${pathname === "/" ? "hidden" : pathname === "/home" ? "hidden" : ""} mt-8 w-full bg-gray-50 dark:bg-transparent`}
+			className={`${pathname === "/" ? "hidden" : pathname === "/menu" ? "hidden" : ""} mt-8 w-full bg-gray-50 dark:bg-transparent`}
 		>
 			<div className="flex justify-between max-w-[78rem] mx-auto py-[1rem] tracking-wider">
 				<div>

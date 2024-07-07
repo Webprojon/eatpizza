@@ -74,7 +74,7 @@ export default function ProductCards({ products }: any) {
 	}, [selectValue, products]);
 
 	return (
-		<div className="flex flex-wrap gap-6">
+		<div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
 			{items.map((product: any, index: number) => (
 				<motion.div
 					variants={fadeInAnimationsVariants}
@@ -85,7 +85,7 @@ export default function ProductCards({ products }: any) {
 					}}
 					custom={index}
 					key={index}
-					className="w-[31%] rounded-sm overflow-hidden shadow-md dark:bg-black/40 backdrop-blur-sm"
+					className="rounded-sm overflow-hidden shadow-md dark:bg-black/40 backdrop-blur-sm"
 				>
 					<div className="p-4 bg-gray-50 dark:bg-slate-700 rounded-sm transition-all">
 						<Link href={`/menu/${product.id}`}>
