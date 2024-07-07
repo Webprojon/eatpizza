@@ -19,16 +19,6 @@ model Products {
   createAt        DateTime @default(now())
 }
 
-model Order {
-  id          String   @id @default(cuid())
-  userName    String
-  userPhone   String
-  userAddress String
-  userFlat    String
-  userFloor   String
-  createAt    DateTime @default(now())
-}
-
 model Address {
   id          String   @id @default(cuid())
   userAddress String

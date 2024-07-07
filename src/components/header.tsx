@@ -10,12 +10,7 @@ import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { useRouter } from "next/navigation";
 import { RiFeedbackFill, RiLogoutBoxLine } from "react-icons/ri";
 import Link from "next/link";
-import {
-	IoChevronDown,
-	IoChevronUp,
-	IoHomeSharp,
-	IoSettingsSharp,
-} from "react-icons/io5";
+import { IoChevronDown, IoChevronUp, IoSettingsSharp } from "react-icons/io5";
 import {
 	MdAccountBox,
 	MdOutlineDeliveryDining,
@@ -109,7 +104,7 @@ export default function Header() {
 				</button>
 
 				<Link
-					href="/w"
+					href="/"
 					onClick={handleIcons}
 					className="flex items-center gap-x-3 text-lg py-[.6rem] text-slate-800 dark:text-slate-400 font-semibold hover:bg-slate-300
 					 hover:dark:bg-slate-700 active:scale-95 active:bg-slate-400 active:dark:bg-slate-800 transition-all px-3 my-1 mx-3 rounded-md tracking-wider"
@@ -118,7 +113,7 @@ export default function Header() {
 					Menu
 				</Link>
 				<Link
-					href="/deliverywwswswsws"
+					href="/delivery"
 					onClick={handleIcons}
 					className="flex items-center gap-x-3 text-lg py-[.6rem] text-slate-800 dark:text-slate-400 font-semibold hover:bg-slate-300
 					 hover:dark:bg-slate-700 active:scale-95 active:bg-slate-400 active:dark:bg-slate-800 transition-all px-3 my-1 mx-3 rounded-md tracking-wider"
