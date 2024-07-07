@@ -20,7 +20,7 @@ export default async function Products() {
 						</div>
 
 						<section
-							className={`mx-auto mt-2 px-2 sm:px-0 sm:mt-0 sm:w-[54rem]`}
+							className={`mx-auto my-3 px-2 sm:px-0 sm:mt-0 sm:w-[54rem]`}
 						>
 							<div>
 								<SelectCategory />

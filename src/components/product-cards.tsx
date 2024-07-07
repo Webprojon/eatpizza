@@ -91,7 +91,7 @@ export default function ProductCards({ products }: any) {
 						<Link href={`/menu/${product.id}`}>
 							<Image
 								className={`mx-auto
-									${product.itemCategory == "pizza" ? "h-[11rem] w-[11rem] hover:animate-spin-17s" : "h-[8rem] w-[8rem]"}
+									${product.itemCategory == "pizza" ? "h-[8.5rem] w-[9rem] sm:h-[11rem] sm:w-[11rem] hover:animate-spin-17s" : "h-[8rem] w-[8rem]"}
 									`}
 								src={product.itemImg}
 								quality="95"
@@ -103,17 +103,9 @@ export default function ProductCards({ products }: any) {
 						</Link>
 					</div>
 					<div className="p-4">
-						<div className="flex items-center justify-between">
-							<h2 className="tracking-wider font-semibold text-xl dark:text-gray-400">
-								{product.itemName}
-							</h2>
-							<Link
-								href={`/menu/${product.id}`}
-								className="border rounded-full p-1 cursor-pointer hover:scale-110 transition-all"
-							>
-								<FaInfo className="size-3" />
-							</Link>
-						</div>
+						<h2 className="tracking-wider font-semibold text-xl dark:text-gray-400">
+							{product.itemName}
+						</h2>
 						<div className="hidden sm:block">
 							<p className="tracking-wide w-[15rem] py-1 text-gray-600 dark:text-gray-400">
 								{shortenDescription(product.itemDescription, 20)}
