@@ -109,7 +109,7 @@ export default function Header() {
 				</button>
 
 				<Link
-					href="/"
+					href="/w"
 					onClick={handleIcons}
 					className="flex items-center gap-x-3 text-lg py-[.6rem] text-slate-800 dark:text-slate-400 font-semibold hover:bg-slate-300
 					 hover:dark:bg-slate-700 active:scale-95 active:bg-slate-400 active:dark:bg-slate-800 transition-all px-3 my-1 mx-3 rounded-md tracking-wider"
@@ -118,7 +118,7 @@ export default function Header() {
 					Menu
 				</Link>
 				<Link
-					href="/delivery"
+					href="/deliverywwswswsws"
 					onClick={handleIcons}
 					className="flex items-center gap-x-3 text-lg py-[.6rem] text-slate-800 dark:text-slate-400 font-semibold hover:bg-slate-300
 					 hover:dark:bg-slate-700 active:scale-95 active:bg-slate-400 active:dark:bg-slate-800 transition-all px-3 my-1 mx-3 rounded-md tracking-wider"
