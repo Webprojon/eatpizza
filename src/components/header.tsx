@@ -47,10 +47,10 @@ export default function Header() {
 	};
 
 	return (
-		<header>
+		<header className="sticky top-0 z-[999]">
 			<nav
-				className="flex justify-between items-center px-2 sm:pl-4 sm:pr-10 bg-slate-200 dark:bg-slate-900
-				 dark:sm:bg-black/30 h-[11vh] border-b border-gray-600"
+				className="flex justify-between items-center px-4 bg-slate-200 dark:bg-slate-900
+				 dark:md:bg-black/30 h-[11vh] border-b border-gray-600"
 			>
 				<div className="flex items-center justify-center cursor-pointer">
 					<Image
@@ -68,7 +68,7 @@ export default function Header() {
 					</button>
 					<div
 						onClick={handleIcons}
-						className="text-slate-800 dark:text-slate-400 sm:hidden"
+						className="text-slate-800 dark:text-slate-400 md:hidden"
 					>
 						{toggleNav ? (
 							<CgClose className="size-8" />
@@ -81,16 +81,16 @@ export default function Header() {
 
 			<div
 				{...handlers}
-				className={`z-10 sm:hidden fixed left-0 bg-black/40 w-full h-full duration-300 ${
+				className={`z-10 md:hidden fixed left-0 bg-black/30 w-full h-full duration-300 ${
 					isVisible ? "block" : "hidden"
 				}`}
 			></div>
 
 			<aside
-				className={`z-10 fixed left-0 border-r border-gray-600 bg-slate-200 dark:bg-slate-900 dark:sm:bg-black/30 min-h-screen sm:h-[89vh] w-[19.5rem] sm:w-[19rem]
+				className={`z-10 fixed left-0 bg-slate-200 dark:bg-slate-900 dark:md:bg-black/30 min-h-screen sm:h-screen w-[19.5rem] sm:w-[17rem]
 						 transition-transform duration-200 ${
 								isVisible ? "translate-x-0" : "-translate-x-full"
-							} sm:-translate-x-full md:translate-x-0`}
+							} md:translate-x-0`}
 			>
 				<button
 					onClick={() => router.push("/modal-address")}
@@ -130,7 +130,7 @@ export default function Header() {
 					<RiFeedbackFill className="size-5" />
 					Feedback
 				</Link>
-				<div className="my-4 border-t border-slate-500 dark:border-gray-600"></div>
+				<div className="my-4 border-b border-gray-600 dark:border-gray-600"></div>
 				<div
 					onClick={handleToggleNav}
 					className="flex flex-col text-lg py-[.6rem] text-slate-800 dark:text-slate-400 font-semibold hover:bg-slate-300

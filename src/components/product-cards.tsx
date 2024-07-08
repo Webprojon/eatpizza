@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { FaInfo } from "react-icons/fa6";
 import AddToCartBtn from "./add-to-cart";
 import { useGlobalContext } from "@/context/global-context";
 import { fadeInAnimationsVariants } from "@/lib/motion-anim";
@@ -25,34 +24,6 @@ export default function ProductCards({ products }: any) {
 		}
 	};
 
-	//useEffect(() => {
-	//	const handleFilterBySelectValue = (selectValue: string) => {
-	//		switch (selectValue) {
-	//			case "pizzas":
-	//				return products.filter(
-	//					(product: any) => product.itemCategory === "pizza",
-	//				);
-	//			case "sauces":
-	//				return products.filter(
-	//					(product: any) => product.itemCategory === "sauce",
-	//				);
-	//			case "drinks":
-	//				return products.filter(
-	//					(product: any) => product.itemCategory === "drink",
-	//				);
-	//			case "creams":
-	//				return products.filter(
-	//					(product: any) => product.itemCategory === "cream",
-	//				);
-	//			default:
-	//				return products;
-	//		}
-	//	};
-
-	//	const filteredItems = handleFilterBySelectValue(selectValue);
-	//	setItems(filteredItems);
-	//}, [selectValue, products]);
-
 	useEffect(() => {
 		const handleFilterBySelectValue = (selectValue: string) => {
 			const categories: { [key: string]: string } = {
@@ -74,7 +45,7 @@ export default function ProductCards({ products }: any) {
 	}, [selectValue, products]);
 
 	return (
-		<div className="grid grid-cols-2 gap-6 mx-auto sm:grid-cols-2 lg:grid-cols-3">
+		<div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 md:mr-4 lg:gap-8 xl:mr-0 mx-auto">
 			{items.map((product: any, index: number) => (
 				<motion.div
 					variants={fadeInAnimationsVariants}
