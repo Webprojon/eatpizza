@@ -73,10 +73,10 @@ export default function Basket() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="absolute top-[6rem] left-[18rem] xl:w-[77rem]"
+			className="absolute left-0 right-0 mx-auto md:mx-0 top-[7rem] md:left-[19rem] w-[95%] xl:w-[75rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
+				<div className="w-[80%] md:w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
 					<h1 className="font-semibold tracking-wider text-lg text-center">
 						You have no item selected 😏
 					</h1>
@@ -189,7 +189,7 @@ export default function Basket() {
 						</h2>
 
 						<form className="relative flex flex-col gap-y-4">
-							<div className="flex gap-x-4">
+							<div className="flex flex-col md:flex-row gap-6">
 								<Input type="text" name="username" text="Your name" />
 								<div className="relative">
 									<Input type="number" name="userphonenumber" direction="pl" />

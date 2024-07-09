@@ -93,7 +93,10 @@ export default function Header() {
 							} md:translate-x-0`}
 			>
 				<button
-					onClick={() => router.push("/modal-address")}
+					onClick={() => {
+						router.push("/modal-address");
+						handleIcons();
+					}}
 					className="flex items-center bg-gradient-green bg-gradient-green-hover font-semibold text-white transition-all
 	        rounded-md py-2 px-3 m-4"
 				>

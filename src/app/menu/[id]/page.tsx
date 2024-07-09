@@ -12,12 +12,15 @@ export default async function Product({ params }: { params: { id: string } }) {
 	});
 
 	return (
-		<div className="relative flex gap-x-10 items-end justify-between w-[100%] max-w-[50rem] mx-auto mt-[6rem] p-6 rounded-md dark:bg-black/40 backdrop-blur-sm">
+		<div
+			className="absolute left-0 right-0 w-[95%] top-[7rem] md:left-[19rem] md:mx-0 md:w-[45%] md:flex gap-x-10 items-end justify-between 
+			 mx-auto p-6 rounded-md dark:bg-black/40 backdrop-blur-sm"
+		>
 			<Link href={"/menu"} className="absolute top-6 right-5">
 				<CgClose className="size-7" />
 			</Link>
 
-			<div className="w-[55%] items-center justify-center">
+			<div className="md:w-[55%]">
 				{product?.itemImg && (
 					<Image
 						src={product.itemImg}
@@ -35,7 +38,7 @@ export default async function Product({ params }: { params: { id: string } }) {
 				</p>
 			</div>
 
-			<div className="w-[45%]">
+			<div className="md:w-[45%]">
 				<AddToCartBtn product={product} index={product?.id} />
 			</div>
 		</div>

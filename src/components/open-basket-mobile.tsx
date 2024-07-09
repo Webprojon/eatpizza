@@ -14,7 +14,7 @@ export default function OpenBasketMobile() {
 			) : (
 				<div
 					onClick={() => router.push("/delivery")}
-					className="fixed bottom-9 right-2 z-10 hidden bg-red-600 dark:bg-red-900 py-[.9rem] px-4 rounded-full"
+					className="fixed bottom-6 right-4 z-10 bg-red-600 dark:bg-red-900 py-[.9rem] px-4 rounded-full sm:hidden"
 				>
 					<span className="flex items-center justify-center font-semibold tracking-wider text-white text-md">
 						<FaCartShopping className="mr-2" />

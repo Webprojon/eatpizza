@@ -29,7 +29,7 @@ export default function MapModalDesktop() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="absolute top-[6rem] left-0 right-0 mx-auto w-[90%] md:w-[50rem] md:mx-0 md:top-[7rem] md:left-[19rem]"
+			className="absolute left-0 right-0 mx-auto w-[95%] md:w-[50rem] md:mx-0 top-[7rem] md:left-[19rem]"
 		>
 			<div className="bg-gray-50 md:px-6 md:pt-4 md:pb-8 rounded-sm dark:bg-black/40 backdrop-blur-sm">
 				<div className="md:flex justify-between gap-x-6 mt-3">

@@ -24,7 +24,7 @@ export default function Feedback() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="absolute top-[6rem] left-0 right-0 md:top-[7rem] md:left-[19rem] mx-auto md:mx-0 w-[90%] md:w-[45rem] py-5 px-10 rounded-sm dark:bg-black/40 backdrop-blur-sm"
+			className="absolute left-0 right-0 top-[7rem] md:left-[19rem] mx-auto md:mx-0 w-[95%] md:w-[45rem] py-5 px-10 rounded-sm dark:bg-black/40 backdrop-blur-sm"
 		>
 			<h2 className="font-semibold mb-5 text-center text-2xl tracking-wider text-gray-600 dark:text-gray-300">
 				Feedback Us

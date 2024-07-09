@@ -8,7 +8,8 @@ export default function Settings() {
 	const { theme, toggleTheme } = useTheme();
 
 	return (
-		<section className="absolute top-[6rem] left-[18rem]">
+		<section className="absolute left-[1rem] top-[7rem] md:left-[19rem]">
+			<h1 className="text-2xl tracking-wider mb-4">Settings</h1>
 			<div
 				onClick={toggleTheme}
 				className="flex items-center justify-center cursor-pointer hover:scale-110 transition-all border w-12 h-12 rounded-full
