@@ -73,7 +73,7 @@ export default function Basket() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="w-[100%] max-w-[78rem] mx-auto mt-[6rem]"
+			className="absolute top-[6rem] left-[18rem] xl:w-[77rem]"
 		>
 			{choosenPizza.length === 0 ? (
 				<div className="w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">

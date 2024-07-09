@@ -29,14 +29,14 @@ export default function MapModalDesktop() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="mt-[6rem] mx-auto"
+			className="absolute top-[6rem] left-0 right-0 mx-auto w-[90%] md:w-[50rem] md:mx-0 md:top-[7rem] md:left-[19rem]"
 		>
-			<div className="relative w-[65rem] bg-gray-50 px-6 pt-4 pb-8 rounded-sm mx-auto dark:bg-black/40 backdrop-blur-sm">
-				<div className="flex justify-between gap-x-6 mt-3">
-					<div className="w-[60%]">
+			<div className="bg-gray-50 md:px-6 md:pt-4 md:pb-8 rounded-sm dark:bg-black/40 backdrop-blur-sm">
+				<div className="md:flex justify-between gap-x-6 mt-3">
+					<div className="w-full md:w-[60%]">
 						<Map />
 					</div>
-					<div className="w-[40%]">
+					<div className="p-4 w-full md:p-0 md:w-[40%]">
 						<h2 className="font-semibold text-gray-700 dark:text-gray-300 my-5">
 							Enter your address
 						</h2>

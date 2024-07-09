@@ -8,16 +8,16 @@ export default function Settings() {
 	const { theme, toggleTheme } = useTheme();
 
 	return (
-		<section className="ml-[20rem]">
+		<section className="absolute top-[6rem] left-[18rem]">
 			<div
 				onClick={toggleTheme}
-				className="flex items-center justify-center cursor-pointer hover:scale-110 transition-all border w-8 h-8 rounded-full
+				className="flex items-center justify-center cursor-pointer hover:scale-110 transition-all border w-12 h-12 rounded-full
 							 dark:bg-transparent dark:border-slate-500 dark:text-white"
 			>
 				{theme === "light" ? (
-					<HiOutlineSun className="size-5" />
+					<HiOutlineSun className="size-7" />
 				) : (
-					<FaMoon className="size-5" />
+					<FaMoon className="size-7" />
 				)}
 			</div>
 		</section>

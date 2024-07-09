@@ -24,14 +24,14 @@ export default function Feedback() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="max-w-[78rem] mx-auto mt-[6rem] py-5 px-10 rounded-sm dark:bg-black/40 backdrop-blur-sm"
+			className="absolute top-[6rem] left-0 right-0 md:top-[7rem] md:left-[19rem] mx-auto md:mx-0 w-[90%] md:w-[45rem] py-5 px-10 rounded-sm dark:bg-black/40 backdrop-blur-sm"
 		>
 			<h2 className="font-semibold mb-5 text-center text-2xl tracking-wider text-gray-600 dark:text-gray-300">
 				Feedback Us
 			</h2>
 			<form
 				action={SubmitFormFeedback}
-				className="flex flex-col gap-y-4 w-[40rem]"
+				className="flex flex-col gap-y-4 md:w-[40rem]"
 			>
 				<input
 					type="text"
@@ -43,7 +43,7 @@ export default function Feedback() {
 				/>
 				<textarea
 					name="userfeedback"
-					rows={7}
+					rows={6}
 					id="userfeedback"
 					placeholder="Type your feedback here..."
 					className="border p-4 rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500 dark:outline-none 

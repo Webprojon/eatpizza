@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import { Toaster } from "react-hot-toast";
-import Footer from "../components/footer";
 import GlobalContextProvider from "@/context/global-context";
 import ThemeContextProvider from "@/context/theme-context";
 
@@ -45,7 +44,6 @@ export default function RootLayout({
 						<Header />
 						{children}
 						<Toaster position="top-center" />
-						<Footer />
 					</GlobalContextProvider>
 				</ThemeContextProvider>
 			</body>
