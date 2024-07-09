@@ -76,7 +76,7 @@ export default function Basket() {
 			className="absolute left-0 right-0 mx-auto md:mx-0 top-[7rem] md:left-[19rem] w-[95%] xl:w-[75rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[80%] md:w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
+				<div className="w-[95%] md:w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
 					<h1 className="font-semibold tracking-wider text-lg text-center">
 						You have no item selected 😏
 					</h1>
@@ -127,7 +127,7 @@ export default function Basket() {
 											src={item.itemImg}
 											alt={item.itemName}
 										/>
-										<div className="flex items-center justify-between flex-row-reverse w-[25rem]">
+										<div className="flex flex-col md:items-center md:justify-between md:flex-row-reverse gap-y-4 w-[15rem] md:w-[25rem]">
 											<div className="flex justify-between items-center gap-x-6">
 												<div>
 													<h2 className="font-semibold text-lg text-gray-700 dark:text-gray-300">
@@ -160,26 +160,13 @@ export default function Basket() {
 								</div>
 							))}
 
-						<div className="flex items-end justify-between">
-							<form action={SubmitFormBasket} className="flex">
-								<Input
-									type="text"
-									name="promocode"
-									text="Enter promocode"
-									size="md"
-								/>
-								<button className="flex justify-center items-center w-[3.3rem] h-[2.7rem] bg-gradient-green rounded-tr-sm rounded-br-sm cursor-pointer">
-									<FaChevronRight className="text-white size-6" />
-								</button>
-							</form>
-							<div>
-								<span className="text-2xl pr-2 font-bold text-gray-700 dark:text-gray-300">
-									Total:
-								</span>
-								<span className="text-2xl font-bold text-gray-700 dark:text-gray-300">
-									{totalPrice} zł
-								</span>
-							</div>
+						<div>
+							<span className="text-2xl pr-2 font-bold text-gray-700 dark:text-gray-300">
+								Total:
+							</span>
+							<span className="text-2xl font-bold text-gray-700 dark:text-gray-300">
+								{totalPrice} zł
+							</span>
 						</div>
 					</div>
 					{/* Contact information */}
@@ -191,12 +178,11 @@ export default function Basket() {
 						<form className="relative flex flex-col gap-y-4">
 							<div className="flex flex-col md:flex-row gap-6">
 								<Input type="text" name="username" text="Your name" />
-								<div className="relative">
-									<Input type="number" name="userphonenumber" direction="pl" />
-									<span className="absolute left-2 top-[50%] translate-y-[-50%] text-gray-500 dark:text-gray-300">
-										+48
-									</span>
-								</div>
+								<Input
+									type="number"
+									name="userphonenumber"
+									text="+48 576 375 586"
+								/>
 								<Input type="text" name="userstreet" text="Street" />
 								<div className="flex gap-x-4">
 									<Input
