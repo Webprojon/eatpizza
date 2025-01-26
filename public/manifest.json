@@ -1,0 +1,29 @@
+{
+	"name": "Eat pizza",
+	"short_name": "Eat pizza",
+	"description": "Order pizza from home",
+	"icons": [
+		{
+			"src": "maskable.png",
+			"sizes": "196x196",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "logo192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "logo512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#2D2B49",
+	"background_color": "#2D2B49",
+	"display": "standalone",
+	"scope": "/",
+	"start_url": "/",
+	"orientation": "portrait"
+}

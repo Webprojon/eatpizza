@@ -60,6 +60,10 @@ const nextConfig = {
 			},
 		],
 	},
+	dest: "public",
+	register: true,
+	skipWaiting: true,
+	reactStrictMode: true,
 };
 
 export default nextConfig;
