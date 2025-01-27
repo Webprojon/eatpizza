@@ -1,5 +1,5 @@
 "use client";
-import logo from "@images/general-imgs/logo.png";
+import logo from "../../public/general-imgs/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
 import { FaLocationDot } from "react-icons/fa6";

@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import basket from "@images/general-imgs/basket.png";
+import basket from "../../public/general-imgs/basket.png";
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa6";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
-import animpizza from "@images/general-imgs/animpizza.png";
+import animpizza from "../../public/general-imgs/animpizza.png";
 import { CgClose } from "react-icons/cg";
 import Counter from "./counter";
 import toast from "react-hot-toast";
