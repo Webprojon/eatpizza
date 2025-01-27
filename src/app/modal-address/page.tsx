@@ -31,7 +31,7 @@ export default function MapModalDesktop() {
 			variants={animFromBottomToTop}
 			className="absolute left-0 right-0 mx-auto w-[95%] md:w-[50rem] md:mx-0 top-[7rem] md:left-[19rem]"
 		>
-			<div className="bg-gray-50 md:px-6 md:pt-4 md:pb-8 rounded-sm dark:bg-black/40 backdrop-blur-sm">
+			<div className="bg-slate-100 md:px-6 md:pt-4 md:pb-8 rounded-sm dark:bg-black/40 backdrop-blur-sm">
 				<div className="md:flex justify-between gap-x-6 mt-3">
 					<div className="w-full md:w-[60%]">
 						<Map />
@@ -51,7 +51,7 @@ export default function MapModalDesktop() {
 									autoComplete="off"
 									placeholder="Address"
 									className={handleInputClasses(
-										"w-full dark:border-gray-500 dark:bg-transparent",
+										"w-full dark:bg-transparent bg-transparent border border-gray-400 dark:border-gray-700",
 									)}
 								/>
 								<div className="flex gap-x-6">
@@ -61,7 +61,7 @@ export default function MapModalDesktop() {
 										placeholder="Flat"
 										autoComplete="off"
 										className={handleInputClasses(
-											"w-[50%] dark:border-gray-500 dark:bg-transparent",
+											"w-[50%] dark:bg-transparent bg-transparent border border-gray-400 dark:border-gray-700",
 										)}
 									/>
 									<input
@@ -70,7 +70,7 @@ export default function MapModalDesktop() {
 										autoComplete="off"
 										placeholder="Floor"
 										className={handleInputClasses(
-											"w-[50%] dark:border-gray-500 dark:bg-transparent",
+											"w-[50%] dark:bg-transparent bg-transparent border border-gray-400 dark:border-gray-700",
 										)}
 									/>
 								</div>

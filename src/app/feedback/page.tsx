@@ -24,7 +24,7 @@ export default function Feedback() {
 			initial="initial"
 			animate="animate"
 			variants={animFromBottomToTop}
-			className="absolute left-0 right-0 top-[7rem] md:left-[19rem] mx-auto md:mx-0 w-[95%] md:w-[45rem] py-5 px-10 rounded-sm dark:bg-black/40 backdrop-blur-sm"
+			className="absolute left-0 right-0 top-[7rem] md:left-[19rem] mx-auto md:mx-0 w-[95%] md:w-[45rem] py-5 px-10 rounded-sm bg-slate-100 dark:bg-black/40 backdrop-blur-sm"
 		>
 			<h2 className="font-semibold mb-5 text-center text-2xl tracking-wider text-gray-600 dark:text-gray-300">
 				Feedback Us
@@ -38,16 +38,16 @@ export default function Feedback() {
 					name="username"
 					placeholder="Enter your name"
 					autoComplete="off"
-					className="border py-3 px-4 tracking-wider rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500
-					dark:outline-none dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 dark:border-gray-500"
+					className="py-3 px-4 tracking-wider rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500
+					dark:outline-none bg-transparent dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 border border-gray-400 dark:border-gray-700"
 				/>
 				<textarea
 					name="userfeedback"
 					rows={6}
 					id="userfeedback"
 					placeholder="Type your feedback here..."
-					className="border p-4 rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500 dark:outline-none 
-							dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 dark:border-gray-500"
+					className="p-4 rounded-sm outline-green-500 text-gray-500 placeholder:text-gray-500 dark:outline-none 
+							bg-transparent dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 border border-gray-400 dark:border-gray-700"
 				></textarea>
 				<button
 					onClick={handleSubmited}

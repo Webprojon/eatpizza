@@ -36,6 +36,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "cdn11.bigcommerce.com",
+			},
+			{
+				protocol: "https",
 				hostname: "pngfre.com",
 			},
 			{

@@ -76,7 +76,7 @@ export default function Basket() {
 			className="absolute left-0 right-0 mx-auto md:mx-0 top-[7rem] md:left-[19rem] w-[95%] xl:w-[75rem]"
 		>
 			{choosenPizza.length === 0 ? (
-				<div className="w-[95%] md:w-[40%] mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
+				<div className="w-[95%] md:w-[40%] bg-slate-100 mx-auto flex flex-col justify-center items-center mt-[10rem] rounded-sm p-10 dark:bg-black/40 backdrop-blur-sm">
 					<h1 className="font-semibold tracking-wider text-lg text-center">
 						You have no item selected 😏
 					</h1>
@@ -91,7 +91,7 @@ export default function Basket() {
 			) : (
 				<div>
 					{/* Header */}
-					<div className="flex justify-between items-center w-full h-10 py-8 px-4 bg-gray-50 dark:bg-black/40 backdrop-blur-sm">
+					<div className="flex justify-between items-center w-full h-10 py-8 px-4 bg-slate-100 dark:bg-black/40 backdrop-blur-sm">
 						<div
 							onClick={() => router.push("/menu")}
 							className="flex items-center cursor-pointer"
@@ -106,7 +106,7 @@ export default function Basket() {
 						<ImBin onClick={() => clearAllItems()} className="size-6" />
 					</div>
 					{/* Basket */}
-					<div className="w-full px-4 py-10 bg-gray-50 dark:bg-black/40 backdrop-blur-sm">
+					<div className="w-full px-4 py-10 bg-slate-100 dark:bg-black/40 backdrop-blur-sm">
 						{choosenPizza &&
 							choosenPizza.map((item: any, index: number) => (
 								<div
@@ -170,7 +170,7 @@ export default function Basket() {
 						</div>
 					</div>
 					{/* Contact information */}
-					<div className="bg-gray-50 dark:bg-black/40 backdrop-blur-sm px-4 py-7">
+					<div className="bg-slate-100 dark:bg-black/40 backdrop-blur-sm px-4 py-7">
 						<h2 className="mb-2 font-bold text-gray-600 dark:text-gray-300 tracking-wider text-lg">
 							Contact information
 						</h2>

@@ -14,7 +14,7 @@ export default async function Product({ params }: { params: { id: string } }) {
 	return (
 		<div
 			className="absolute left-0 right-0 w-[95%] top-[7rem] md:left-[19rem] md:mx-0 md:w-[45%] md:flex gap-x-10 items-end justify-between 
-			 mx-auto p-6 rounded-md dark:bg-black/40 backdrop-blur-sm"
+			 mx-auto p-6 rounded-md bg-slate-100 dark:bg-black/40 backdrop-blur-sm"
 		>
 			<Link href={"/menu"} className="absolute top-6 right-5">
 				<CgClose className="size-7" />

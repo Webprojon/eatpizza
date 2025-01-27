@@ -111,7 +111,7 @@ const initialProducts: Prisma.ProductsCreateInput[] = [
 	{
 		itemCategory: "drink",
 		itemImg:
-			"https://www.pepsicoschoolsource.com/prod/s3fs-public/styles/pepsico_school_source_product_image_style_for_mobile_fallback/public/2021-06/Tropicana%C2%AE%20Orange%20Juice%20-%2010oz..png?itok=vQJcENmA",
+			"https://cdn11.bigcommerce.com/s-zj6x66u8ej/images/stencil/1500x1500/products/249/503/MM_JTG_12z_OJ__21807.1734722272.png?c=1",
 		itemName: "Orange Juice",
 		itemDescription: "Drink and fly",
 		itemPrice: 9.99,

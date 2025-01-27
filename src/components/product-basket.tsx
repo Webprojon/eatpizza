@@ -73,11 +73,11 @@ export default function DesktopBasket() {
 
 	return (
 		<div className="hidden lg:flex sticky top-[3.4rem] transition-all h-[23rem] lg:w-[16rem] xl:w-[18rem] flex-col gap-y-2">
-			<div className="bg-white dark:bg-slate-800 dark:bg-black/40 backdrop-blur-sm rounded-sm shadow-md">
+			<div className="bg-slate-100 backdrop-blur-sm rounded-sm shadow-md dark:bg-black/40">
 				<div className={`relative ${open ? "h-[9.2vh]" : "h-[48vh]"}`}>
 					<div
 						onClick={isOpenCart}
-						className="flex justify-between border-b border-gray-300 dark:border-gray-500 px-4 py-4 cursor-pointer"
+						className="flex justify-between border-b border-gray-300 dark:border-gray-700 px-4 py-4 cursor-pointer"
 					>
 						<span className="flex items-center font-bold text-lg">
 							Cart {open ? <GoTriangleDown /> : <GoTriangleUp />}
@@ -213,15 +213,15 @@ export default function DesktopBasket() {
 
 			<form
 				action={SubmitFormBasket}
-				className="relative shadow-md bg-white dark:bg-slate-800 rounded-sm py-[.7rem] px-4"
+				className="relative shadow-md bg-slate-100 dark:bg-black/40 rounded-sm py-[.7rem] px-4"
 			>
 				<input
 					type="text"
 					name="promocode"
 					placeholder="Enter promocode"
 					autoComplete="off"
-					className="bg-gray-100 focus:bg-gray-50 font-medium outline-green-400 border px-4 py-2 rounded-sm
-					dark:outline-none dark:bg-slate-800 dark:border-gray-500 dark:text-gray-300 dark:placeholder:text-gray-300"
+					className="bg-transparent focus:bg-gray-50 font-medium outline-green-400 border border-gray-400 px-4 py-2 rounded-sm
+					dark:outline-none dark:bg-transparent dark:border-gray-700 dark:text-gray-300 dark:placeholder:text-gray-300"
 				/>
 				<button
 					className="bg-gradient-green bg-gradient-green-hover flex justify-center items-center rounded-sm absolute bottom-[.7rem] 
