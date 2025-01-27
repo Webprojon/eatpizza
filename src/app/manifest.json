@@ -1,6 +1,6 @@
 {
-  "name": "EatPizza",
-  "short_name": "MySiteEatPizza",
+  "name": "Eat Pizza",
+  "short_name": "Eat Pizza",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#fbf9f9",
-  "background_color": "#1f0370",
+  "theme_color": "#0d0d13",
+  "background_color": "#16181f",
   "display": "standalone"
 }
