@@ -74,9 +74,14 @@ export default function ProductCards({ products }: any) {
 						</Link>
 					</div>
 					<div className="p-4">
-						<h2 className="tracking-wider font-semibold text-xl dark:text-gray-400">
-							{product.itemName}
-						</h2>
+						<div className="flex justify-between items-center">
+							<h2 className="tracking-wider font-semibold text-sm lg:text-xl dark:text-gray-400">
+								{product.itemName}
+							</h2>
+							<span className="text-sm sm:hidden">
+								{product.itemPrice}.99 zl
+							</span>
+						</div>
 						<div className="hidden sm:block">
 							<p className="tracking-wide w-[15rem] py-1 text-gray-600 dark:text-gray-400">
 								{shortenDescription(product.itemDescription, 20)}
