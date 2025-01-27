@@ -25,7 +25,7 @@ export const metadata = {
 	version: "1.0.0",
 	platforms: ["Website"],
 };
-
+<meta name="apple-mobile-web-app-title" content="MyWebSite" />;
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -33,6 +33,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<meta name="apple-mobile-web-app-title" content="MyWebSite" />
 			<body
 				className={`${inter.className} flex flex-col justify-between min-h-screen bg-gray-100 dark:bg-gray-900 
 				dark:text-gray-300 dark:text-opacity-90 overflow-y-hidden`}
