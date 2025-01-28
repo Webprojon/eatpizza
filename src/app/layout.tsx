@@ -7,25 +7,73 @@ import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-	title: "Eat Pizza",
-	description:
-		"Discover the best pizza recipes and toppings with Eat Pizza! From classic margheritas to gourmet creations, satisfy your pizza cravings anytime, anywhere.",
-	keywords: [
-		"pizza eat",
-		"eat pizza",
-		"pizza recipes",
-		"homemade pizza",
-		"pizza toppings",
-		"pizza app",
-		"cooking app",
-	],
-	author: "Eat Pizza Restaurant",
-	category: "Food & Drink",
-	version: "1.0.0",
-	platforms: ["Website"],
+import type { Metadata, Viewport } from "next";
+
+const APP_NAME = "Eat Pizza";
+const APP_DEFAULT_TITLE = "Eat Pizza APP";
+const APP_TITLE_TEMPLATE = "%s - PWA App";
+const APP_DESCRIPTION =
+	"Discover the best pizza recipes and toppings with Eat Pizza! From classic margheritas to gourmet creations, satisfy your pizza cravings anytime, anywhere.";
+
+export const metadata: Metadata = {
+	applicationName: APP_NAME,
+	title: {
+		default: APP_DEFAULT_TITLE,
+		template: APP_TITLE_TEMPLATE,
+	},
+	description: APP_DESCRIPTION,
+	manifest: "/manifest.json",
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: "default",
+		title: APP_DEFAULT_TITLE,
+		// startUpImage: [],
+	},
+	formatDetection: {
+		telephone: false,
+	},
+	openGraph: {
+		type: "website",
+		siteName: APP_NAME,
+		title: {
+			default: APP_DEFAULT_TITLE,
+			template: APP_TITLE_TEMPLATE,
+		},
+		description: APP_DESCRIPTION,
+	},
+	twitter: {
+		card: "summary",
+		title: {
+			default: APP_DEFAULT_TITLE,
+			template: APP_TITLE_TEMPLATE,
+		},
+		description: APP_DESCRIPTION,
+	},
 };
-<meta name="apple-mobile-web-app-title" content="Eat Pizza" />;
+
+export const viewport: Viewport = {
+	themeColor: "#FFFFFF",
+};
+
+//export const metadata = {
+//	title: "Eat Pizza",
+//	description:
+//		"Discover the best pizza recipes and toppings with Eat Pizza! From classic margheritas to gourmet creations, satisfy your pizza cravings anytime, anywhere.",
+//	keywords: [
+//		"pizza eat",
+//		"eat pizza",
+//		"pizza recipes",
+//		"homemade pizza",
+//		"pizza toppings",
+//		"pizza app",
+//		"cooking app",
+//	],
+//	author: "Eat Pizza Restaurant",
+//	category: "Food & Drink",
+//	version: "1.0.0",
+//	platforms: ["Website"],
+//};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -33,7 +81,6 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<meta name="apple-mobile-web-app-title" content="Eat Pizza" />
 			<body
 				className={`${inter.className} flex flex-col justify-between min-h-screen bg-gray-50 dark:bg-gray-900 
 				dark:text-gray-300 dark:text-opacity-90 overflow-y-hidden select-none`}

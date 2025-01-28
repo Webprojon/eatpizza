@@ -204,7 +204,7 @@ export default function Basket() {
 								className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-sm transition-all
 							mt-[1.5rem]"
 							>
-								Submit the order
+								Checkout Now
 							</button>
 						</form>
 					</div>
