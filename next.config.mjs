@@ -1,13 +1,17 @@
-/** @type {import('next').NextConfig} */
-//const nextConfig = {
-//images: {
-//	remotePatterns: [
-//		{
-//			protocol: "https",
-//			hostname: "www.benjerry.co.uk",
-//		},
-//	],
-//},
-//};
+import withPWA from "next-pwa";
 
-//export default nextConfig;
+const nextConfig = {
+	distDir: "build",
+	reactStrictMode: true,
+	swcMinify: true,
+	compiler: {
+		removeConsole: process.env.NODE_ENV !== "development",
+	},
+};
+
+export default withPWA({
+	dest: "public",
+	register: true,
+	skipWaiting: true,
+	buildExcludes: [/app-build-manifest.json$/],
+})(nextConfig);
