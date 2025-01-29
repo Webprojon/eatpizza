@@ -13,7 +13,7 @@ export default async function Products() {
 	return (
 		<Suspense fallback={<Loading />}>
 			<section
-				className="md:absolute top-[6.5rem] left-[18.2rem] h-[84.5vh] xl:w-[76rem] mx-auto 
+				className="md:absolute top-[5.7rem] sm:top-[6.5rem] left-[18.2rem] h-[84.5vh] xl:w-[76rem] mx-auto 
 			overflow-y-auto no-scrollbar"
 			>
 				<div className="flex flex-row justify-between">
